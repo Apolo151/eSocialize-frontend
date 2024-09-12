@@ -8,6 +8,7 @@ import { Post } from '../models/post';
 })
 export class PostService {
   private apiUrl = 'http://localhost:5000/posts'
+  
   constructor(private http:HttpClient){}
 
   getPosts(): Observable<Post[]> {

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter,OnChanges, SimpleChanges } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,6 +16,14 @@ export class PostComponent {
   isDropdownOpen = false;
   isEditing = false;
   comment: string = '';
+  beforeEdit: string = '';
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['post'] && changes['post'].currentValue) {
+      this.beforeEdit = this.post.body;
+    }
+  }
+
 
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
@@ -39,6 +47,7 @@ export class PostComponent {
 
   cancelEditing(): void {
     console.log("Editing canceled");
+    this.post.body = this.beforeEdit;
     this.isEditing = false;
   }
 

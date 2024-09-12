@@ -1,64 +1,40 @@
 {
   "posts": [
     {
-      "id": "1726159469709",
+      "id": "1726168379956",
       "title": "New Post",
-      "body": "aaa",
+      "body": "test",
       "author": {
-        "id": 1726159469709,
+        "id": 1726168379956,
         "name": "Ismail",
-        "createdAt": "2024-09-12T16:44:29.709Z",
+        "createdAt": "2024-09-12T19:12:59.956Z",
         "profilePictureUrl": "assets/default-profile-picture-url.webp"
       },
-      "createdAt": "2024-09-12T16:44:29.709Z"
+      "createdAt": "2024-09-12T19:12:59.956Z"
     },
     {
-      "id": "1726159470336",
+      "id": "1726169427346",
+      "title": "New Post",
+      "body": "Ismail",
+      "author": {
+        "id": 1726169427346,
+        "name": "Ismail",
+        "createdAt": "2024-09-12T19:30:27.346Z",
+        "profilePictureUrl": "assets/default-profile-picture-url.webp"
+      },
+      "createdAt": "2024-09-12T19:30:27.346Z"
+    },
+    {
+      "id": "1726169569583",
       "title": "New Post",
       "body": "aa",
       "author": {
-        "id": 1726159470336,
+        "id": 1726169569583,
         "name": "Ismail",
-        "createdAt": "2024-09-12T16:44:30.336Z",
+        "createdAt": "2024-09-12T19:32:49.583Z",
         "profilePictureUrl": "assets/default-profile-picture-url.webp"
       },
-      "createdAt": "2024-09-12T16:44:30.336Z"
-    },
-    {
-      "id": "1726159470700",
-      "title": "New Post",
-      "body": "a",
-      "author": {
-        "id": 1726159470700,
-        "name": "Ismail",
-        "createdAt": "2024-09-12T16:44:30.700Z",
-        "profilePictureUrl": "assets/default-profile-picture-url.webp"
-      },
-      "createdAt": "2024-09-12T16:44:30.700Z"
-    },
-    {
-      "id": "1726159470912",
-      "title": "New Post",
-      "body": "a",
-      "author": {
-        "id": 1726159470912,
-        "name": "Ismail",
-        "createdAt": "2024-09-12T16:44:30.912Z",
-        "profilePictureUrl": "assets/default-profile-picture-url.webp"
-      },
-      "createdAt": "2024-09-12T16:44:30.912Z"
-    },
-    {
-      "id": "1726159471063",
-      "title": "New Post",
-      "body": "a",
-      "author": {
-        "id": 1726159471063,
-        "name": "Ismail",
-        "createdAt": "2024-09-12T16:44:31.063Z",
-        "profilePictureUrl": "assets/default-profile-picture-url.webp"
-      },
-      "createdAt": "2024-09-12T16:44:31.063Z"
+      "createdAt": "2024-09-12T19:32:49.583Z"
     }
   ]
 }
