@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
-import { PostService } from 'src/app/services/post.service';
-import {Post} from 'src/app/models/post'
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Post } from 'src/app/models/post';
+
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
   styleUrls: ['./new-post.component.css']
 })
 export class NewPostComponent {
-  constructor(private postsService: PostService) {}
-  new_post_text: string = ''
-
+  @Output() postAdded = new EventEmitter<Post>();
+  new_post_text: string = '';
+  
 
   getProfilePictureUrl(): string {
     return 'assets/default-profile-picture-url.webp';
   }
 
 
-  handleSubmit(): void {
+
+  submitPost(): void {
     if (this.new_post_text.trim()) {
       const newPost: Post = {
         id: Date.now(), 
@@ -26,24 +27,18 @@ export class NewPostComponent {
           id: Date.now(), 
           name: 'Ismail', 
           createdAt: new Date(), 
-          profilePictureUrl: 'default-profile-picture-url.webp'
+          profilePictureUrl: 'assets/default-profile-picture-url.webp'
         },
         createdAt: new Date() 
       };
 
-      this.postsService.addPost(newPost).subscribe(
-        response => {
-          console.log('Post added successfully', response);
-          this.new_post_text = ''; 
-        },
-        error => {
-          console.error('Error adding post', error);
-        }
-      );
-
+      this.postAdded.emit(newPost);
+      this.new_post_text = '';
     } else {
-      console.log('empty');
+      console.log('Post text is empty');
     }
   }
+
   
 }
+

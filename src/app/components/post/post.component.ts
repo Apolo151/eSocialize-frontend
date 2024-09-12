@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { PostService } from 'src/app/services/post.service'; // Import PostService
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,12 +9,13 @@ import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 })
 export class PostComponent {
   @Input() post!: Post;
+  @Output() postDeleted = new EventEmitter<number>();
+  @Output() postUpdated = new EventEmitter<Post>();
+  
   faEllipsis = faEllipsis;
   isDropdownOpen = false;
   isEditing = false;
   comment: string = '';
-
-  constructor(private postService: PostService) {}
 
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
@@ -33,15 +33,8 @@ export class PostComponent {
   }
 
   savePost(): void {
-    this.postService.updatePost(this.post).subscribe({
-      next: (updatedPost) => {
-        console.log('Post updated successfully:', updatedPost);
-        this.isEditing = false; 
-      },
-      error: (err) => {
-        console.error('Error updating post:', err);
-      }
-    });
+    this.postUpdated.emit(this.post);
+    this.isEditing = false; 
   }
 
   cancelEditing(): void {
@@ -50,17 +43,11 @@ export class PostComponent {
   }
 
   handleDelete(): void {
-    if(this.isDropdownOpen)
+    if (this.isDropdownOpen) {
       this.isDropdownOpen = false;
-    this.postService.deletePost(this.post.id).subscribe({
-      next: (deletedPost)=>{
-        console.log("Deleted Successfully",deletedPost);
-        window.location.reload(); 
-      },
-      error:(err)=>{
-        console.log("Error deleting post:",err);
-      }
-    });
+    }
+    console.log(this.post.id);
+    this.postDeleted.emit(this.post.id);
   }
 
   getProfilePictureUrl(): string {

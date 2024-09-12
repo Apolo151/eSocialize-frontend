@@ -1,8 +1,12 @@
-<app-new-post></app-new-post><!-- TODO: Map on list of posts using app-post component -->
-<div class="posts-container">
-    <div *ngFor="let post of posts">
-        <app-post  [post]="post"></app-post>
-    </div>
-</div>
 
-  
+
+<app-new-post (postAdded)="handlePostAdded($event)"></app-new-post>
+<div class = "posts-container">
+  <app-post
+    *ngFor="let post of posts"
+    [post]="post"
+    (postDeleted)="handlePostDeleted($event)"
+    (postUpdated)="handlePostUpdated($event)"
+  ></app-post>
+
+</div>

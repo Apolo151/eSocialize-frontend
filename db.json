@@ -1,56 +1,76 @@
 {
   "posts": [
     {
-      "id": "4",
-      "title": "Understanding JavaScript Closures",
-      "body": "Closures are a fundamental concept in JavaScript that allow functions to retain access to variables from their lexical scope even after the function has finished executing.",
-      "author": {
-        "id": 4,
-        "name": "Dave Brown",
-        "bio": "JavaScript expert and web performance advocate.",
-        "email": "dave.brown@example.com",
-        "profilePictureUrl": null,
-        "createdAt": "2024-01-04T00:00:00Z"
-      },
-      "createdAt": "2024-09-04T16:45:00Z"
-    },
-    {
-      "id": "5",
-      "title": "Mastering CSS Grid",
-      "body": "CSS Grid is a powerful layout system that provides a way to create complex grid-based designs with ease. It allows for more control over the layout of web pages.",
-      "author": {
-        "id": 5,
-        "name": "Eve Davis",
-        "bio": "CSS specialist and web design guru.",
-        "email": "eve.davis@example.com",
-        "profilePictureUrl": null,
-        "createdAt": "2024-01-05T00:00:00Z"
-      },
-      "createdAt": "2024-09-05T09:00:00Z"
-    },
-    {
-      "id": "1726150448538",
+      "id": 1726159469709,
       "title": "New Post",
-      "body": "test\\",
+      "body": "aaa",
       "author": {
-        "id": 1726150448538,
+        "id": 1726159469709,
         "name": "Ismail",
-        "createdAt": "2024-09-12T14:14:08.538Z",
+        "createdAt": "2024-09-12T16:44:29.709Z",
         "profilePictureUrl": "assets/default-profile-picture-url.webp"
       },
-      "createdAt": "2024-09-12T14:14:08.538Z"
+      "createdAt": "2024-09-12T16:44:29.709Z"
     },
     {
-      "id": "1726150529181",
+      "id": 1726159470336,
       "title": "New Post",
-      "body": "Hi",
+      "body": "aa",
       "author": {
-        "id": 1726150529181,
+        "id": 1726159470336,
         "name": "Ismail",
-        "createdAt": "2024-09-12T14:15:29.181Z",
+        "createdAt": "2024-09-12T16:44:30.336Z",
         "profilePictureUrl": "assets/default-profile-picture-url.webp"
       },
-      "createdAt": "2024-09-12T14:15:29.181Z"
+      "createdAt": "2024-09-12T16:44:30.336Z"
+    },
+    {
+      "id": 1726159470700,
+      "title": "New Post",
+      "body": "a",
+      "author": {
+        "id": 1726159470700,
+        "name": "Ismail",
+        "createdAt": "2024-09-12T16:44:30.700Z",
+        "profilePictureUrl": "assets/default-profile-picture-url.webp"
+      },
+      "createdAt": "2024-09-12T16:44:30.700Z"
+    },
+    {
+      "id": 1726159470912,
+      "title": "New Post",
+      "body": "a",
+      "author": {
+        "id": 1726159470912,
+        "name": "Ismail",
+        "createdAt": "2024-09-12T16:44:30.912Z",
+        "profilePictureUrl": "assets/default-profile-picture-url.webp"
+      },
+      "createdAt": "2024-09-12T16:44:30.912Z"
+    },
+    {
+      "id": 1726159471063,
+      "title": "New Post",
+      "body": "a",
+      "author": {
+        "id": 1726159471063,
+        "name": "Ismail",
+        "createdAt": "2024-09-12T16:44:31.063Z",
+        "profilePictureUrl": "assets/default-profile-picture-url.webp"
+      },
+      "createdAt": "2024-09-12T16:44:31.063Z"
+    },
+    {
+      "id": 1726159471507,
+      "title": "New Post",
+      "body": "a",
+      "author": {
+        "id": 1726159471507,
+        "name": "Ismail",
+        "createdAt": "2024-09-12T16:44:31.507Z",
+        "profilePictureUrl": "assets/default-profile-picture-url.webp"
+      },
+      "createdAt": "2024-09-12T16:44:31.507Z"
     }
   ]
 }
