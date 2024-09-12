@@ -1,48 +1,6 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "Exploring TypeScript",
-      "body": "TypeScript is a powerful tool that adds static typing to JavaScript. It helps in catching errors early during development and makes the code more maintainable.",
-      "author": {
-        "id": 1,
-        "name": "Alice Johnson",
-        "bio": "Software Engineer and TypeScript enthusiast.",
-        "email": "alice.johnson@example.com",
-        "profilePictureUrl": null,
-        "createdAt": "2024-01-01T00:00:00Z"
-      },
-      "createdAt": "2024-09-01T10:00:00Z"
-    },
-    {
-      "id": "2",
-      "title": "Introduction to Angular",
-      "body": "Angular is a popular framework for building single-page applications. It provides a robust set of tools and features for developing modern web applications.",
-      "author": {
-        "id": 2,
-        "name": "Bob Smith",
-        "bio": "Frontend developer with a passion for Angular.",
-        "email": "bob.smith@example.com",
-        "profilePictureUrl": null,
-        "createdAt": "2024-01-02T00:00:00Z"
-      },
-      "createdAt": "2024-09-02T12:30:00Z"
-    },
-    {
-      "id": "3",
-      "title": "Getting Started with React",
-      "body": "React is a library for building user interfaces. It allows developers to create reusable UI components and manage the state of their applications effectively.",
-      "author": {
-        "id": 3,
-        "name": "Carol Williams",
-        "bio": "React developer and UI/UX designer.",
-        "email": "carol.williams@example.com",
-        "profilePictureUrl": null,
-        "createdAt": "2024-01-03T00:00:00Z"
-      },
-      "createdAt": "2024-09-03T14:15:00Z"
-    },
-    {
       "id": "4",
       "title": "Understanding JavaScript Closures",
       "body": "Closures are a fundamental concept in JavaScript that allow functions to retain access to variables from their lexical scope even after the function has finished executing.",
@@ -71,26 +29,26 @@
       "createdAt": "2024-09-05T09:00:00Z"
     },
     {
-      "id": 1726150448538,
+      "id": "1726150448538",
       "title": "New Post",
       "body": "test\\",
       "author": {
         "id": 1726150448538,
         "name": "Ismail",
         "createdAt": "2024-09-12T14:14:08.538Z",
-        "profilePictureUrl": "default-profile-picture-url.webp"
+        "profilePictureUrl": "assets/default-profile-picture-url.webp"
       },
       "createdAt": "2024-09-12T14:14:08.538Z"
     },
     {
-      "id": 1726150529181,
+      "id": "1726150529181",
       "title": "New Post",
-      "body": "Ismail",
+      "body": "Hi",
       "author": {
         "id": 1726150529181,
         "name": "Ismail",
         "createdAt": "2024-09-12T14:15:29.181Z",
-        "profilePictureUrl": "default-profile-picture-url.webp"
+        "profilePictureUrl": "assets/default-profile-picture-url.webp"
       },
       "createdAt": "2024-09-12T14:15:29.181Z"
     }

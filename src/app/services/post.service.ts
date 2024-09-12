@@ -21,8 +21,15 @@ export class PostService {
 
 
 
-  // removePost(postId: number): void {
-  //   this.posts = this.posts.filter(post => post.id !== postId);
-  // }
+  updatePost(post: Post): Observable<Post> {
+    const url = `${this.apiUrl}/${post.id}`;
+    return this.http.put<Post>(url, post);
+  }
+
+  deletePost(postId: number): Observable<void> {
+    const url = `${this.apiUrl}/${postId}`;
+    return this.http.delete<void>(url);
+  }
+  
 
 }

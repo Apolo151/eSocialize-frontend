@@ -1,18 +1,37 @@
 <div class="post-container">
     <div class="post-heading">
-      <app-avatar [img]="getProfilePictureUrl()"></app-avatar>
-      <div>
-        <h4 class="author-name">{{ post.author.name }}</h4>
-        <p class="time">{{ post.createdAt | date:'short' }}</p>
+
+      <div class = "author-details">
+        <app-avatar class = "avatar" [img]="getProfilePictureUrl()"></app-avatar>
+        <div>
+          <h4 class="author-name">{{ post.author.name }}</h4>
+          <p class="time">{{ post.createdAt | date:'short' }}</p>
+        </div>
       </div>
+
+      <div class="dropdown">
+        <button (click)="toggleDropdown()">
+          <fa-icon [icon]="faEllipsis"></fa-icon>
+        </button>
+        <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+          <button (click) = "handleEdit()">Edit</button>
+          <button (click) = "handleDelete()">Delete</button>
+        </div>
+      </div>
+      
     </div>
   
     <div class="post-body">
-      <p>{{ post.body }}</p>
+      <p *ngIf="!isEditing">{{ post.body }}</p>
+      <textarea id="content" [(ngModel)]="post.body" name="content" *ngIf="isEditing"></textarea>
+      <button class = "save-button" *ngIf = "isEditing" (click) = "savePost()">Save</button>
+      <button class = "cancel-button" *ngIf = "isEditing" (click) = "cancelEditing()">Cancel</button>
     </div>
+
+    
   
     <div class="comments-container">
       <input type="text" name="comment" id="comment" [(ngModel)]="comment" placeholder="Write your comment">
     </div>
-  </div>
-  
+    
+  </div> 
