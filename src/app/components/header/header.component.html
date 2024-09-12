@@ -1,1 +1,13 @@
-<p>header works!</p>
+<div class="header-container">
+    <div class="logo-section">
+        <img [src]="logoUrl" alt="Logo" class="logo">
+        <h1 class="site-name">Friends</h1>
+    </div>
+
+    <div class="search-bar">
+        <img src = "../../../assets/images/search-icon.png" class="search-icon">
+        <input type="text" name="searchBar" id="searchBar" placeholder="Search for friends, groups, pages">
+    </div>
+
+    <app-avatar [img]="imageUrl"></app-avatar>
+</div>
