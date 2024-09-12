@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { PostService } from 'src/app/services/post.service';
-import { mockPosts } from 'src/app/mock/mock-posts';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,16 +9,19 @@ import { mockPosts } from 'src/app/mock/mock-posts';
 })
 export class HomeComponent implements OnInit {
 
-  posts: Post[] = []
+  posts: Post[] = [];
 
   constructor(private postService: PostService) { }
   
   ngOnInit(): void {
-    this.postService.getPosts().subscribe((res: any) => {
-      this.posts = [...res]
-      console.log(res);
-      
-    })
-    
+    this.postService.getPosts().subscribe({
+      next: (res: Post[]) => {
+        this.posts = [...res];
+        console.log(res);
+      },
+      error: (err) => {
+        console.error('Error fetching posts:', err);
+      }
+    });
   }
 }

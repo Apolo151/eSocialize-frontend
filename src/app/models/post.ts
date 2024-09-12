@@ -5,5 +5,5 @@ export interface Post {
     body: string;       
     author: Author;     
     createdAt: Date;    
-  }
+  } 
   
