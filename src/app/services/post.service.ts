@@ -16,7 +16,12 @@ export class PostService {
 
 
   addPost(post: Post): Observable<Post> {
-    return this.http.post<Post>(this.apiUrl, post);
+    const newPost = {
+      ...post,
+      id: post.id.toString()
+    };
+    
+    return this.http.post<Post>(this.apiUrl, newPost);
   }
 
 
@@ -26,7 +31,7 @@ export class PostService {
     return this.http.put<Post>(url, post);
   }
 
-  deletePost(postId: number): Observable<void> {
+  deletePost(postId: string): Observable<void> {
     const url = `${this.apiUrl}/${postId}`;
     return this.http.delete<void>(url);
   }

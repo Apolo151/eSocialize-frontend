@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": 1726159469709,
+      "id": "1726159469709",
       "title": "New Post",
       "body": "aaa",
       "author": {
@@ -13,7 +13,7 @@
       "createdAt": "2024-09-12T16:44:29.709Z"
     },
     {
-      "id": 1726159470336,
+      "id": "1726159470336",
       "title": "New Post",
       "body": "aa",
       "author": {
@@ -25,7 +25,7 @@
       "createdAt": "2024-09-12T16:44:30.336Z"
     },
     {
-      "id": 1726159470700,
+      "id": "1726159470700",
       "title": "New Post",
       "body": "a",
       "author": {
@@ -37,7 +37,7 @@
       "createdAt": "2024-09-12T16:44:30.700Z"
     },
     {
-      "id": 1726159470912,
+      "id": "1726159470912",
       "title": "New Post",
       "body": "a",
       "author": {
@@ -49,7 +49,7 @@
       "createdAt": "2024-09-12T16:44:30.912Z"
     },
     {
-      "id": 1726159471063,
+      "id": "1726159471063",
       "title": "New Post",
       "body": "a",
       "author": {
@@ -59,18 +59,6 @@
         "profilePictureUrl": "assets/default-profile-picture-url.webp"
       },
       "createdAt": "2024-09-12T16:44:31.063Z"
-    },
-    {
-      "id": 1726159471507,
-      "title": "New Post",
-      "body": "a",
-      "author": {
-        "id": 1726159471507,
-        "name": "Ismail",
-        "createdAt": "2024-09-12T16:44:31.507Z",
-        "profilePictureUrl": "assets/default-profile-picture-url.webp"
-      },
-      "createdAt": "2024-09-12T16:44:31.507Z"
     }
   ]
 }

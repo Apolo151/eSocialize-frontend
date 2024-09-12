@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
   }
 
   handlePostDeleted(postId: number): void {
-    this.postService.deletePost(postId).subscribe({
+    this.postService.deletePost(postId.toString()).subscribe({
       
       next: () => {
         console.log('Post deleted successfully');
