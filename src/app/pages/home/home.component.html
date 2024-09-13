@@ -1,3 +1,4 @@
+<app-header *ngIf="author" [author]="author" ></app-header>
 
 <div class="container">
 
@@ -9,7 +10,6 @@
     <div *ngIf="errorMessage">
       <p>Error: {{ errorMessage }}</p>
     </div>
-  <app-header *ngIf="author" [author]="author" ></app-header>
 
   <app-new-post *ngIf="author" [author]="author" (postAdded)="handlePostAdded($event)"></app-new-post>
 
