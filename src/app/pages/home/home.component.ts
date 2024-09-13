@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
+import { Author } from 'src/app/models/author';
 import { PostService } from 'src/app/services/post.service';
+import { AuthorsService} from 'src/app/services/authors.service';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +11,14 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class HomeComponent implements OnInit {
   posts: Post[] = [];
+  author: Author | undefined;
+  errorMessage: string = '';
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private authorService : AuthorsService) {}
 
   ngOnInit(): void {
     this.loadPosts();
+    this.loadAuthor();
   }
 
   loadPosts(): void {
@@ -24,6 +29,17 @@ export class HomeComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error fetching posts:', err);
+      }
+    });
+  }
+
+  loadAuthor(): void{
+    this.authorService.getAuthor(1).subscribe({
+      next: (data) => {
+        this.author = data;
+      },
+      error: (error) => {
+        this.errorMessage = error.message;
       }
     });
   }

@@ -1,6 +1,5 @@
 <div class="container">
     <p>Active friends</p>
     
-    <app-friend-details [friend]="friend"></app-friend-details>
-    <app-friend-details [friend]="friend1"></app-friend-details>
+    <app-friend-details *ngFor="let friend of friends" [friend]="friend"></app-friend-details>
 </div>

@@ -1,10 +1,17 @@
 
 <div class="container">
 
+  <div *ngIf="errorMessage">
+    <p>Error: {{ errorMessage }}</p>
+  </div>
+  
   <div class="vertical-container">
-  <app-header></app-header>
+    <div *ngIf="errorMessage">
+      <p>Error: {{ errorMessage }}</p>
+    </div>
+  <app-header *ngIf="author" [author]="author" ></app-header>
 
-  <app-new-post (postAdded)="handlePostAdded($event)"></app-new-post>
+  <app-new-post *ngIf="author" [author]="author" (postAdded)="handlePostAdded($event)"></app-new-post>
 
   <div class = "posts-container">
     <app-post
@@ -18,7 +25,7 @@
 
 </div>
 
-<app-side-nav></app-side-nav>
+<app-side-nav *ngIf="author" [author]="author"></app-side-nav>
 
 </div>
 

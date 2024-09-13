@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter,OnChanges, SimpleChanges } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { Author } from 'src/app/models/author';
 
 @Component({
   selector: 'app-post',
@@ -8,6 +9,7 @@ import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent {
+  @Input() author!:Author;
   @Input() post!: Post;
   @Output() postDeleted = new EventEmitter<number>();
   @Output() postUpdated = new EventEmitter<Post>();
@@ -60,6 +62,6 @@ export class PostComponent {
   }
 
   getProfilePictureUrl(): string {
-    return this.post.author.profilePictureUrl || 'assets/default-profile-picture-url.webp';
+    return this.post.author.profilePictureUrl || '../../../assets/images/default-profile-picture-url.webp';
   }
 }
