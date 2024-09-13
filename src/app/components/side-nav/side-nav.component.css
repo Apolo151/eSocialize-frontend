@@ -1,0 +1,12 @@
+.container{
+    margin-top: 150%;
+    margin-left: 16px;
+}
+
+p{
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-weight: bold;
+  margin: 4px 0;
+}

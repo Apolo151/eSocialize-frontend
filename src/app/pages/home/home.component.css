@@ -3,3 +3,12 @@
     flex-direction: column;
     gap: 24px;
 }
+
+.vertical-container{
+    width:81.5%
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}

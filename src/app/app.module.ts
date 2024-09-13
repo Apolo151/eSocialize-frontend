@@ -14,6 +14,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FriendDetailsComponent } from './components/friend-details/friend-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommentComponent,
     SideNavComponent,
     HeaderComponent,
-    AvatarComponent
+    AvatarComponent,
+    FriendDetailsComponent,
   ],
   imports: [
     BrowserModule,

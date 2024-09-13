@@ -1,12 +1,25 @@
 
-<app-header></app-header>
-<app-new-post (postAdded)="handlePostAdded($event)"></app-new-post>
-<div class = "posts-container">
-  <app-post
-    *ngFor="let post of posts"
-    [post]="post"
-    (postDeleted)="handlePostDeleted($event)"
-    (postUpdated)="handlePostUpdated($event)"
-  ></app-post>
+<div class="container">
+
+  <div class="vertical-container">
+  <app-header></app-header>
+
+  <app-new-post (postAdded)="handlePostAdded($event)"></app-new-post>
+
+  <div class = "posts-container">
+    <app-post
+      *ngFor="let post of posts"
+      [post]="post"
+      (postDeleted)="handlePostDeleted($event)"
+      (postUpdated)="handlePostUpdated($event)"
+    ></app-post>
+
+  </div>
 
 </div>
+
+<app-side-nav></app-side-nav>
+
+</div>
+
+
