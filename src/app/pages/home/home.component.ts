@@ -3,7 +3,7 @@ import { Post } from 'src/app/models/post';
 import { Author } from 'src/app/models/author';
 import { PostService } from 'src/app/services/post.service';
 import { AuthorsService} from 'src/app/services/authors.service';
-
+import { PostComment } from 'src/app/models/comment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -83,4 +83,12 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  addCommentToPost(newComment: PostComment, postId: number) {
+    const post = this.posts.find(p => p.id === postId);
+    if (post) {
+      post.comments.push(newComment); 
+    }
+  }
+
 }

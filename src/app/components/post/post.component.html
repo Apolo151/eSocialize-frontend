@@ -31,7 +31,12 @@
     
   
     <div class="comments-container">
-      <input type="text" name="comment" id="comment" [(ngModel)]="comment" placeholder="Write your comment">
+        <input type="text" name="comment" id="comment" [(ngModel)]="comment" placeholder="Write your comment">
+        <button (click) = "addComment()">Submit</button>
+        <div *ngFor="let comment of post.comments">
+        <p>{{ comment.author.name }}: {{ comment.body }}</p>
+      </div>    
     </div>
+
     
   </div> 

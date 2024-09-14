@@ -1,7 +1,8 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Author } from 'src/app/models/author';
 import { Post } from 'src/app/models/post';
-
+import { PostComponent } from '../post/post.component';
+import { PostComment } from 'src/app/models/comment';
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
@@ -22,14 +23,6 @@ export class NewPostComponent {
     }
 
   }
-
-
-
-/*id: number;     
-    title: string;      
-    body: string;       
-    author: Author;     
-    createdAt: Date;  */
   
   submitPost(): void {
     if (this.new_post_text.trim()) {
@@ -38,7 +31,8 @@ export class NewPostComponent {
         title: 'New Post',
         body: this.new_post_text,
         author : this.author,
-        createdAt: new Date() 
+        createdAt: new Date() ,
+        comments:[]
       };
 
       this.postAdded.emit(newPost);

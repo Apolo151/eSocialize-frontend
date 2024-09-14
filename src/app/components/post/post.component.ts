@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter,OnChanges, SimpleChanges } from 
 import { Post } from 'src/app/models/post';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { Author } from 'src/app/models/author';
-
+import { PostComment } from 'src/app/models/comment';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -13,11 +13,11 @@ export class PostComponent {
   @Input() post!: Post;
   @Output() postDeleted = new EventEmitter<number>();
   @Output() postUpdated = new EventEmitter<Post>();
-  
+  @Output() newComment = new EventEmitter<PostComment>();
+
   faEllipsis = faEllipsis;
   isDropdownOpen = false;
   isEditing = false;
-  comment: string = '';
   beforeEdit: string = '';
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -26,6 +26,7 @@ export class PostComponent {
     }
   }
 
+  
 
   toggleDropdown(): void {
     this.isDropdownOpen = !this.isDropdownOpen;
@@ -64,4 +65,30 @@ export class PostComponent {
   getProfilePictureUrl(): string {
     return this.post.author.profilePictureUrl || '../../../assets/images/default-profile-picture-url.webp';
   }
+  
+  //coment logic
+  comment: string = '';
+
+  addComment(): void{
+    const newComment : PostComment = {
+      id: Date.now(),
+      author: this.getCurrentUser(),
+      body: this.comment,
+      createdAt: new Date(),
+    };
+
+    this.newComment.emit(newComment);
+    this.comment = "";
+
+  }
+
+  getCurrentUser(){
+    return {
+      id: 1,
+      name: 'Ismail',
+      profilePictureUrl: 'default.jpg',
+      createdAt: new Date(),
+    }
+  }
+
 }

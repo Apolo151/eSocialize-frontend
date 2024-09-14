@@ -7,7 +7,6 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { HomeComponent } from './pages/home/home.component';
 import { NewPostComponent } from './components/new-post/new-post.component';
 import { PostComponent } from './components/post/post.component';
-import { CommentComponent } from './components/comment/comment.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
@@ -24,7 +23,6 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     NewPostComponent,
     PostComponent,
-    CommentComponent,
     SideNavComponent,
     HeaderComponent,
     AvatarComponent,

@@ -19,6 +19,7 @@
       [post]="post"
       (postDeleted)="handlePostDeleted($event)"
       (postUpdated)="handlePostUpdated($event)"
+      (newComment)="addCommentToPost($event, post.id)"
     ></app-post>
 
   </div>
