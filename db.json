@@ -11,26 +11,7 @@
         "profilePictureUrl": "../../../assets/images/default-profile-picture-url.webp"
       },
       "createdAt": "2024-09-13T16:03:13.320Z",
-      "comments": [
-        {
-          "id": "1",
-          "author": {
-            "id": 2,
-            "name": "Spong bob"
-          },
-          "body": "Great post!",
-          "createdAt": "2024-09-13T16:05:00.000Z"
-        },
-        {
-          "id": "2",
-          "author": {
-            "id": 3,
-            "name": "Captain America"
-          },
-          "body": "Interesting perspective.",
-          "createdAt": "2024-09-13T16:10:00.000Z"
-        }
-      ]
+      "comments": []
     },
     {
       "id": "1726243449089",
@@ -43,17 +24,7 @@
         "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg"
       },
       "createdAt": "2024-09-13T16:04:09.089Z",
-      "comments": [
-        {
-          "id": "1",
-          "author": {
-            "id": 1,
-            "name": "Spider man"
-          },
-          "body": "Hello there!",
-          "createdAt": "2024-09-13T16:15:00.000Z"
-        }
-      ]
+      "comments": []
     },
     {
       "id": "1726251642173",
@@ -148,6 +119,17 @@
           },
           "body": "I thought you were done with that.",
           "createdAt": "2024-09-13T18:22:00.000Z"
+        },
+        {
+          "id": 1726333254832,
+          "author": {
+            "id": 1,
+            "name": "Ismail",
+            "profilePictureUrl": "default.jpg",
+            "createdAt": "2024-09-14T17:00:54.832Z"
+          },
+          "body": "Hello",
+          "createdAt": "2024-09-14T17:00:54.832Z"
         }
       ]
     },
@@ -216,7 +198,7 @@
         }
       ]
     }
-  ],   
+  ],
   "Authors": [
     {
       "id": "1",
@@ -396,4 +378,3 @@
     }
   ]
 }
-

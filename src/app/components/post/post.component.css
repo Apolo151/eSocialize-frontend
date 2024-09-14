@@ -23,18 +23,73 @@
 }
 
 .comments-container {
-    display: flex;
-    margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+
+.input-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .comments-container input {
-    outline: none;
-    border: none;
-    background: #f4f4f4;
-    padding: 8px 24px;
-    border-radius: 16px;
-    width: 100%;
+  outline: none;
+  border: none;
+  background: #f4f4f4;
+  padding: 8px 24px;
+  border-radius: 16px;
+  width: 100%;
+  font-size: 14px;
 }
+
+.comments-container button {
+  padding: 8px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.comment {
+  padding: 12px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.comment p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.comment-actions {
+  margin-top: 5px;
+}
+
+.comment-actions button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding:0;
+}
+
+.comment-actions button:hover {
+  text-decoration: underline;
+}
+
+
 
 
 textarea {
