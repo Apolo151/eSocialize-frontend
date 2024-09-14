@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FriendDetailsComponent } from './components/friend-details/friend-details.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FriendDetailsComponent } from './components/friend-details/friend-detai
     HeaderComponent,
     AvatarComponent,
     FriendDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
