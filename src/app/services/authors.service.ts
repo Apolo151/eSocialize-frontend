@@ -3,6 +3,7 @@ import { Author } from '../models/author';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
 
 
 @Injectable({
@@ -24,7 +25,7 @@ export class AuthorsService {
     );
   }
 
-  getAuthor(authorId: number): Observable<Author> {
+  getAuthor(authorId: string): Observable<Author> {
     return this.http.get<Author[]>(this.apiUrl).pipe(
       map((authors: Author[]) => {
         const specificAuthor = authors.find(author => +author.id === +authorId);
@@ -32,6 +33,21 @@ export class AuthorsService {
           throw new Error(`Author with id ${authorId} not found`);
         }
         return specificAuthor;
+      })
+    );
+  }
+
+  authorLogIn(authorEmail: string, authorPassword: string): Observable<Author | null>{
+    return this.http.get<Author[]>(this.apiUrl).pipe(
+      map((authors: Author[]) =>{
+        const specificAuthor = authors.find(author => author.email === authorEmail);
+        if(specificAuthor && specificAuthor.password === authorPassword)
+        {
+          return specificAuthor  
+        }
+        return null
+        // throw new Error(`Author with email ${authorEmail} not found or this is not the password`);
+
       })
     );
   }

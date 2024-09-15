@@ -71,7 +71,7 @@ export class PostComponent implements OnChanges {
   addComment(): void {
     const newComment: PostComment = {
       id: Date.now(),
-      author: this.getCurrentUser(),
+      author: this.author,
       body: this.comment,
       createdAt: new Date(),
     };
@@ -107,14 +107,5 @@ export class PostComponent implements OnChanges {
 
   cancelDeleteComment(): void {
     this.deletingCommentId = null;
-  }
-
-  getCurrentUser() {
-    return {
-      id: 1,
-      name: 'Ismail',
-      profilePictureUrl: 'default.jpg',
-      createdAt: new Date(),
-    };
   }
 }

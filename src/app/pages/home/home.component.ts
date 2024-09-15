@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { Author } from 'src/app/models/author';
 import { PostService } from 'src/app/services/post.service';
 import { AuthorsService} from 'src/app/services/authors.service';
 import { PostComment } from 'src/app/models/comment';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,11 +12,17 @@ import { PostComment } from 'src/app/models/comment';
 })
 export class HomeComponent implements OnInit {
   posts: Post[] = [];
+  authorId: string = '';
   author: Author | undefined;
   errorMessage: string = '';
 
-  constructor(private postService: PostService, private authorService : AuthorsService) {}
 
+  constructor(private postService: PostService, private authorService : AuthorsService, private route : ActivatedRoute) {
+    this.route.paramMap.subscribe(params => {
+      this.authorId = params.get('id')!;
+      console.log('Author ID:', this.authorId);
+    });
+  }
   ngOnInit(): void {
     this.loadPosts();
     this.loadAuthor();
@@ -34,7 +41,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadAuthor(): void{
-    this.authorService.getAuthor(1).subscribe({
+    this.authorService.getAuthor(this.authorId).subscribe({
       next: (data) => {
         this.author = data;
       },

@@ -12,6 +12,17 @@
     align-items: center;
     gap: 16px;
 }
+
+.author-comment-details{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-body{
+  flex-direction: column;
+}
+
 .post-heading {
     display: flex;
     align-items: center;
@@ -66,8 +77,12 @@
 }
 
 .comment p {
-  margin: 0;
+  margin-left: 38px;
   font-size: 14px;
+}
+
+.comment header{
+  display: flex;
 }
 
 .comment-actions {
@@ -88,9 +103,6 @@
 .comment-actions button:hover {
   text-decoration: underline;
 }
-
-
-
 
 textarea {
   width:100%;

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import {bootstrapApplication, provideProtractorTestingSupport} from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, provideRouter, withComponentInputBinding } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -36,7 +38,9 @@ import { LoginComponent } from './pages/login/login.component';
     HttpClientModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    provideRouter([], withComponentInputBinding())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

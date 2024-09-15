@@ -13,16 +13,19 @@
 
   <app-new-post *ngIf="author" [author]="author" (postAdded)="handlePostAdded($event)"></app-new-post>
 
-  <div class = "posts-container">
-    <app-post
-      *ngFor="let post of posts"
-      [post]="post"
-      (postDeleted)="handlePostDeleted($event)"
-      (postUpdated)="handlePostUpdated($event)"
-      (newComment)="addCommentToPost($event, post.id)"
-    ></app-post>
-
+  <div class="posts-container">
+    <ng-container *ngIf="author">
+      <app-post
+        *ngFor="let post of posts"
+        [author]="author"
+        [post]="post"
+        (postDeleted)="handlePostDeleted($event)"
+        (postUpdated)="handlePostUpdated($event)"
+        (newComment)="addCommentToPost($event, post.id)"
+      ></app-post>
+    </ng-container>
   </div>
+  
 
 </div>
 

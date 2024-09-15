@@ -2,7 +2,7 @@
     <div class="post-heading">
 
       <div class = "author-details">
-        <app-avatar class = "avatar" [img]="getProfilePictureUrl()"></app-avatar>
+        <app-avatar [img]="getProfilePictureUrl()"></app-avatar>
         <div>
           <h4 class="author-name">{{ post.author.name }}</h4>
           <p class="time">{{ post.createdAt | date:'short' }}</p>
@@ -32,13 +32,17 @@
 
     <div class="comments-container">
       <div class="input-container">
-        <input type="text" name="comment" id="comment" [(ngModel)]="comment" placeholder="Write your comment">
+        <app-avatar [size]="'40px'" img={{author.profilePictureUrl}}></app-avatar>
+        <input type="text" name="comment" id="comment" [(ngModel)]="comment" placeholder="Write your comment" (keydown.enter)="addComment()">
         <button (click)="addComment()">Submit</button>
       </div>
     
       <div *ngFor="let comment of post.comments" class="comment">
         <div *ngIf="editingCommentId === comment.id; else viewMode">
-          <input [(ngModel)]="comment.body" />
+          <div class = "author-comment-details">
+            <app-avatar [size]="'30px'" img={{comment.author.profilePictureUrl}}></app-avatar>
+            <input [(ngModel)]="comment.body" (keydown.enter)="saveCommentEdit(comment)"/>
+          </div>
           <div class = "comment-actions">
             <button (click)="saveCommentEdit(comment)">Save</button>
             <button (click)="cancelCommentEdit(comment)">Cancel</button>
@@ -46,7 +50,17 @@
         </div>
     
         <ng-template #viewMode>
-          <p><strong>{{ comment.author.name }}</strong>: {{ comment.body }}</p>
+          <div class="comment-body">
+            <div class = "author-comment-details">
+              <app-avatar [size]="'30px'" img={{comment.author.profilePictureUrl}}></app-avatar>
+              <div>
+                <h4><strong>{{ comment.author.name }}</strong></h4>
+                <!-- <p><strong>{{ comment.author.name }}</strong>: {{ comment.body }}</p> -->
+              </div>     
+            </div>
+            <p>{{ comment.body }}</p>
+          </div>
+
           <div class = "comment-actions">
             <button (click)="startEditComment(comment)">Edit</button>
             <button (click)="confirmDeleteComment(comment)">Delete</button>
