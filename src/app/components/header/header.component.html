@@ -9,5 +9,18 @@
         <input type="text" name="searchBar" id="searchBar" placeholder="Search for friends, groups, pages">
     </div>
 
+    <div class="dropdown">
+        <button (click)="toggleDropdown()">
+        <fa-icon class="dropdown-icon" [icon]="faAdd"></fa-icon>
+        </button>
+        <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+            <h4>Suggested for you</h4>
+            <app-friend-details *ngFor="let author of authors" [friend]="author">
+                <p (click)="addFriend(author.id)"> + Follow</p>
+            </app-friend-details>
+            
+        </div>
+      </div>
+
     <app-avatar [img]="imageUrl"></app-avatar>
 </div>

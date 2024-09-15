@@ -1,7 +1,16 @@
-.container{
-
+.parent{
     display: flex;
     align-items: center;
     gap: 16px;
     padding: 10px 0px;
 }
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 4px;
+    cursor: pointer;
+}
+

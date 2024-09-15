@@ -5,10 +5,16 @@
 }
 
 .vertical-container{
-    width:81.5%
+    width:80%;
+    margin-right: 0;
 }
 
 .container{
     display: flex;
     justify-content: space-between;
+}
+
+.nav-container{
+    padding: 0;
+    margin-left: -300px;
 }

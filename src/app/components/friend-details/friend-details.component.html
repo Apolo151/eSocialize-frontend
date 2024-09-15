@@ -1,4 +1,7 @@
-<div class="container">
+<div class="parent">
     <app-avatar class ="avatar" [img] ="getProfilePictureUrl()"></app-avatar>
-    <h5 class="author-name">{{ friend.name }}</h5>
+    <div class="container">
+        <h5 class="author-name">{{ friend.name }}</h5>
+        <ng-content class="content"></ng-content>
+    </div>
 </div>

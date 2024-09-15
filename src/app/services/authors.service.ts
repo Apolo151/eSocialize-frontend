@@ -37,6 +37,12 @@ export class AuthorsService {
     );
   }
 
+  getAllAuthor(): Observable<Author[]>{
+    return this.http.get<Author[]>(this.apiUrl);
+  }
+
+
+
   authorLogIn(authorEmail: string, authorPassword: string): Observable<Author | null>{
     return this.http.get<Author[]>(this.apiUrl).pipe(
       map((authors: Author[]) =>{
