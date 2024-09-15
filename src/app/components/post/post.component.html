@@ -1,9 +1,9 @@
 <div class="post-container">
   <div class="post-heading">
     <div class="author-details">
-      <app-avatar [img]="author?.profile_picture || '../../../assets/images/default-profile-picture-url.webp'"></app-avatar>
+      <app-avatar [img]="postAuthor?.profile_picture || ''"></app-avatar>
       <div>
-        <h4 class="author-name">{{ author?.username }}</h4>
+        <h4 class="author-name">{{ postAuthor?.username }}</h4>
         <p class="time">{{ post.createdAt | date:'short' }}</p>
       </div>
     </div>
@@ -17,6 +17,7 @@
         <button (click)="handleDelete()">Delete</button>
       </div>
     </div>
+    
   </div>
     
   <div class="post-body">
@@ -28,7 +29,7 @@
 
   <div class="comments-container">
     <div class="input-container">
-      <app-avatar [size]="'40px'" [img]="author?.profile_picture || '../../../assets/images/default-profile-picture-url.webp'"></app-avatar>
+      <app-avatar [size]="'40px'" [img]="loggedAuthor.profile_picture"></app-avatar>
       <input type="text" name="comment" id="comment" [(ngModel)]="comment" placeholder="Write your comment" (keydown.enter)="addComment()">
       <button (click)="addComment()">Submit</button>
     </div>

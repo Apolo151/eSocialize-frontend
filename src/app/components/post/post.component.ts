@@ -12,6 +12,7 @@ import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 })
 export class PostComponent implements OnChanges {
   @Input() post!: Post;
+  @Input() loggedAuthor! : Author;
   @Output() postDeleted = new EventEmitter<number>();
   @Output() postUpdated = new EventEmitter<Post>();
   @Output() newComment = new EventEmitter<PostComment>();
@@ -22,7 +23,7 @@ export class PostComponent implements OnChanges {
   beforeEdit: string = '';
   editingCommentId: number | null = null;
   deletingCommentId: number | null = null;
-  author: Author | null = null;
+  postAuthor: Author | null = null;
   
   commentAuthors: Map<number, Author> = new Map();
 
@@ -40,17 +41,15 @@ export class PostComponent implements OnChanges {
     if (this.post.userId) {
       this.authorsService.getAuthor(this.post.userId.toString()).subscribe({
         next: (author: Author) => {
-          this.author = author;
+          this.postAuthor = author;
         },
         error: (err) => {
           console.error('Error fetching post author:', err);
-          this.author = null;
+          this.postAuthor = null;
         }
       });
     }
   }
-
-
 
   // Fetch all authors for comments
   loadCommentAuthors(): void {
@@ -63,7 +62,7 @@ export class PostComponent implements OnChanges {
   }
 
   getProfilePictureUrl(): string {
-    return this.author?.profile_picture || '../../../assets/images/default-profile-picture-url.webp';
+    return this.postAuthor?.profile_picture || '../../../assets/images/default-profile-picture-url.webp';
   }
 
   toggleDropdown(): void {
@@ -106,7 +105,7 @@ export class PostComponent implements OnChanges {
       id: Date.now(),
       content: this.comment,
       PostId: this.post.id,
-      UserId: this.author!.id,
+      UserId: this.loggedAuthor!.id,
       createdAt: new Date(),
     };
 

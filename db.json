@@ -4,7 +4,7 @@
       "id": "1",
       "username": "alex_jones",
       "password": "hashed_password_alex",
-      "profile_picture": "../../../assets/images/default-profile-picture-url.webp",
+      "profile_picture": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
       "isActive": true,
       "createdAt": "2024-09-10T08:00:00Z",
       "email": "alex.jones@example.com",
@@ -14,14 +14,15 @@
         5
       ],
       "friends": [
-        3,2
+        3,
+        2
       ]
     },
     {
       "id": "2",
       "username": "emily_davis",
       "password": "hashed_password_emily",
-      "profile_picture": "../../../assets/images/default-profile-picture-url.webp",
+      "profile_picture": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
       "isActive": true,
       "createdAt": "2024-09-11T08:00:00Z",
       "email": "emily.davis@example.com",
@@ -37,7 +38,7 @@
       "id": "3",
       "username": "michael_lee",
       "password": "hashed_password_michael",
-      "profile_picture": "../../../assets/images/default-profile-picture-url.webp",
+      "profile_picture": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
       "isActive": true,
       "createdAt": "2024-09-12T08:00:00Z",
       "email": "michael.lee@example.com",
@@ -97,7 +98,15 @@
       "content": "New blog post on digital marketing strategies!",
       "createdAt": "2024-09-14T14:00:00Z",
       "likes": [],
-      "comments": []
+      "comments": [
+        {
+          "id": 1726433602688,
+          "content": "see u  later",
+          "PostId": "6",
+          "UserId": "1",
+          "createdAt": "2024-09-15T20:53:22.688Z"
+        }
+      ]
     },
     {
       "id": "7",
@@ -116,8 +125,23 @@
           "PostId": "7",
           "UserId": "1",
           "createdAt": "2024-09-15T16:30:00Z"
+        },
+        {
+          "id": 1726433586326,
+          "content": "bye",
+          "PostId": "7",
+          "UserId": "1",
+          "createdAt": "2024-09-15T20:53:06.326Z"
         }
       ]
+    },
+    {
+      "id": "1726432594599",
+      "content": "hello",
+      "userId": "1",
+      "createdAt": "2024-09-15T20:36:34.599Z",
+      "comments": [],
+      "likes": []
     }
   ]
 }

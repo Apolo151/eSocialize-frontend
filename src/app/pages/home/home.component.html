@@ -17,6 +17,7 @@
     <ng-container *ngIf="author">
       <app-post
         *ngFor="let post of posts"
+        [loggedAuthor]="author"
         [post]="post"
         (postDeleted)="handlePostDeleted($event)"
         (postUpdated)="handlePostUpdated($event)"
