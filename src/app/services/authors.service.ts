@@ -43,6 +43,10 @@ export class AuthorsService {
     return this.http.get<Author[]>(this.apiUrl);
   }
 
+  updateAuthor(author: Author): Observable<Author> {
+    const url = `${this.apiUrl}/${author.id}`;
+    return this.http.put<Author>(url, author); 
+  }
 
 
   authorLogIn(authorEmail: string, authorPassword: string): Observable<Author | null>{

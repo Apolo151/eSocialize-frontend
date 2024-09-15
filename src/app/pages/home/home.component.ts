@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   errorMessage: string = '';
 
 
-  constructor(private postService: PostService, private authorService : AuthorsService, private route : ActivatedRoute) {
+  constructor(private postService: PostService, private authorService : AuthorsService, private route : ActivatedRoute, private router: Router) {
     this.route.paramMap.subscribe(params => {
       this.authorId = params.get('id')!;
       console.log('Author ID:', this.authorId);
@@ -98,4 +98,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  goToUserProfile(userId: string) {
+    this.router.navigate([`/user/${userId}`]);
+  }
+  
 }

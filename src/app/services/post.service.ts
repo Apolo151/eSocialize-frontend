@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Post } from '../models/post';
+import { map, catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,11 @@ export class PostService {
     return this.http.get<Post[]>(this.apiUrl); 
   }
 
+  getPostsByAuthorId(authorId: number): Observable<Post[]> {
+    return this.getPosts().pipe(
+      map(posts => posts.filter(post => post.userId.toString() === authorId.toString())),
+    );
+  }
 
   addPost(post: Post): Observable<Post> {
     const newPost = {

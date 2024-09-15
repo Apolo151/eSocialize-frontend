@@ -4,11 +4,10 @@ export interface Author {
     username: string;    
     password: string;      
     profile_picture: string; 
-    isActive: boolean;
+    isActive?: boolean;
     createdAt: Date;
     email?: string | null;
     bio?: string | null;
-    posts?: Post[];
     friends?: number[];       
   }
   

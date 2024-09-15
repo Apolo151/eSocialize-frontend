@@ -1,33 +1,49 @@
 {
   "Authors": [
     {
-      "id": 1,
-      "username": "john_doe",
-      "password": "hashed_password1",
+      "id": "1",
+      "username": "alex_jones",
+      "password": "hashed_password_alex",
       "profile_picture": "../../../assets/images/default-profile-picture-url.webp",
       "isActive": true,
-      "createdAt": "2024-09-15T08:00:00Z",
-      "email": "john.doe@example.com",
-      "bio": "Software developer and tech enthusiast.",
+      "createdAt": "2024-09-10T08:00:00Z",
+      "email": "alex.jones@example.com",
+      "bio": "Tech enthusiast and software engineer.",
       "posts": [
-        1,
-        2
+        4,
+        5
       ],
       "friends": [
-        2
+        3,2
       ]
     },
     {
-      "id": 2,
-      "username": "jane_smith",
-      "password": "hashed_password2",
+      "id": "2",
+      "username": "emily_davis",
+      "password": "hashed_password_emily",
       "profile_picture": "../../../assets/images/default-profile-picture-url.webp",
       "isActive": true,
-      "createdAt": "2024-09-14T08:00:00Z",
-      "email": "jane.smith@example.com",
-      "bio": "Digital marketer and content creator.",
+      "createdAt": "2024-09-11T08:00:00Z",
+      "email": "emily.davis@example.com",
+      "bio": "Content creator and digital strategist.",
       "posts": [
-        3
+        6
+      ],
+      "friends": [
+        1
+      ]
+    },
+    {
+      "id": "3",
+      "username": "michael_lee",
+      "password": "hashed_password_michael",
+      "profile_picture": "../../../assets/images/default-profile-picture-url.webp",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "michael.lee@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [
+        7
       ],
       "friends": [
         1
@@ -36,10 +52,30 @@
   ],
   "posts": [
     {
-      "id": "1",
+      "id": "4",
       "userId": 1,
-      "content": "Just test a new project, excited to share it soon!",
-      "createdAt": "2024-09-15T09:00:00Z",
+      "content": "Just completed a new tech project!",
+      "createdAt": "2024-09-14T12:00:00Z",
+      "likes": [
+        {
+          "userId": 3
+        }
+      ],
+      "comments": [
+        {
+          "id": 1726418604026,
+          "content": "test",
+          "PostId": "4",
+          "UserId": "1",
+          "createdAt": "2024-09-15T16:43:24.026Z"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "userId": 1,
+      "content": "Exploring new technologies in AI.",
+      "createdAt": "2024-09-15T10:30:00Z",
       "likes": [
         {
           "userId": 2
@@ -47,33 +83,41 @@
       ],
       "comments": [
         {
-          "id": "1",
-          "content": "Hi! Can't wait to see it.",
-          "PostId": 1,
-          "UserId": 2,
-          "createdAt": "2024-09-15T09:30:00Z"
+          "id": 1,
+          "content": "Interesting read!",
+          "PostId": "5",
+          "UserId": "2",
+          "createdAt": "2024-09-15T11:00:00Z"
         }
       ]
     },
     {
-      "id": "2",
-      "userId": 1,
-      "content": "Working on a new blog post about programming best practices.",
-      "createdAt": "2024-09-14T10:00:00Z",
+      "id": "6",
+      "userId": 2,
+      "content": "New blog post on digital marketing strategies!",
+      "createdAt": "2024-09-14T14:00:00Z",
       "likes": [],
       "comments": []
     },
     {
-      "id": "3",
-      "userId": 2,
-      "content": "Just launched my new digital marketing course!",
-      "createdAt": "2024-09-13T12:00:00Z",
+      "id": "7",
+      "userId": 3,
+      "content": "Just finished a new graphic design project.",
+      "createdAt": "2024-09-15T16:00:00Z",
       "likes": [
         {
           "userId": 1
         }
       ],
-      "comments": []
+      "comments": [
+        {
+          "id": 2,
+          "content": "Looks amazing!",
+          "PostId": "7",
+          "UserId": "1",
+          "createdAt": "2024-09-15T16:30:00Z"
+        }
+      ]
     }
   ]
 }

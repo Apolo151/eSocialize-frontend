@@ -19,7 +19,8 @@ import { FriendDetailsComponent } from './components/friend-details/friend-detai
 import { LoginComponent } from './pages/login/login.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt.interceptor';
-import { CommentsComponent } from './components/comments/comments.component';  
+import { CommentsComponent } from './components/comments/comments.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';  
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CommentsComponent } from './components/comments/comments.component';
     FriendDetailsComponent,
     LoginComponent,
     CommentsComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
