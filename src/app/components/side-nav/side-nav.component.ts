@@ -1,31 +1,34 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { AuthorsService } from 'src/app/services/authors.service';
 import { Author } from 'src/app/models/author';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.css']
 })
-export class SideNavComponent {
+export class SideNavComponent implements OnChanges {
   @Input() author!: Author;
-  
   friends: Author[] = [];
 
-  constructor(private authorsService : AuthorsService){}
+  constructor(private authorsService: AuthorsService) {}
 
-  ngOnInit(): void {
-    if (this.author != null){
-      console.log(this.author.id)
-      this.authorsService.getFriends(this.author.id).subscribe((friends) => (this.friends = friends));
-    }else{
-      console.log("No author")
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['author'] && this.author) {
+      this.loadFriends();
     }
-
-//    this.authorsService.getFriends(5).subscribe((friends) => (this.friends = friends));
-
   }
 
+  loadFriends(): void {
+    if (this.author && this.author.id) {
+      this.authorsService.getFriends(this.author.id).subscribe(
+        (friends) => {
+          this.friends = friends;
+        },
+        (error) => {
+          console.error('Error fetching friends:', error);
+        }
+      );
+    }
+  }
 }

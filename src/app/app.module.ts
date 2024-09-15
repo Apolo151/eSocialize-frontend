@@ -17,6 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FriendDetailsComponent } from './components/friend-details/friend-details.component';
 import { LoginComponent } from './pages/login/login.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './services/jwt.interceptor';
+import { CommentsComponent } from './components/comments/comments.component';  
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { LoginComponent } from './pages/login/login.component';
     AvatarComponent,
     FriendDetailsComponent,
     LoginComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ import { LoginComponent } from './pages/login/login.component';
     FontAwesomeModule
   ],
   providers: [
-    provideRouter([], withComponentInputBinding())
+    provideRouter([], withComponentInputBinding()),
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

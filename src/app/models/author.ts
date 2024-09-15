@@ -1,13 +1,14 @@
 import { Post } from './post';
 export interface Author {
     id: number;             
-    name: string;    
+    username: string;    
     password: string;      
-    bio?: string | null;
-    email?: string | null;
-    profilePictureUrl: string; 
+    profile_picture: string; 
+    isActive: boolean;
     createdAt: Date;
+    email?: string | null;
+    bio?: string | null;
     posts?: Post[];
-    friends?: Author[];       
+    friends?: number[];       
   }
   

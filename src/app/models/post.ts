@@ -1,11 +1,12 @@
 import {Author} from 'src/app/models/author';
 import {PostComment} from 'src/app/models/comment';
+import {Likes} from 'src/app/models/likes';
 export interface Post {
     id: number;     
-    title: string;      
-    body: string;       
-    author: Author;     
+    userId: number;
+    content: string;   
     createdAt: Date;
+    likes: Likes[];
     comments: PostComment[];
   } 
   

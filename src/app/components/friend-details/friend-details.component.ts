@@ -11,7 +11,7 @@ export class FriendDetailsComponent {
 @Input() friend!: Author;
 
 getProfilePictureUrl(): string {
-  return this.friend.profilePictureUrl || 'assets/default-profile-picture-url.webp';
+  return this.friend.profile_picture || 'assets/default-profile-picture-url.webp';
 }
 
 }

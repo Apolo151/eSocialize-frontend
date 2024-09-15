@@ -25,7 +25,7 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.loadAllAutohrs();
     if (this.author != null){
-     this.imageUrl = this.author.profilePictureUrl
+     this.imageUrl = this.author.profile_picture;
     }else{
       console.log("No author")
     }

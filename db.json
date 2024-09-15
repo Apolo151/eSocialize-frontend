@@ -1,639 +1,79 @@
 {
-  "posts": [
+  "Authors": [
     {
-      "id": "1726243393320",
-      "title": "New Post",
-      "body": "ahmed",
-      "author": {
-        "id": 1726243393320,
-        "name": "Ismail",
-        "password": "123456",
-        "createdAt": "2024-09-13T16:03:13.320Z",
-        "profilePictureUrl": "../../../assets/images/default-profile-picture-url.webp"
-      },
-      "createdAt": "2024-09-13T16:03:13.320Z",
-      "comments": [
-        {
-          "id": "1",
-          "body": "Hello",
-          "author": {
-            "id": "1",
-            "name": "Spider man",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "spiderman@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-            "createdAt": "2023-08-12T19:12:59.956Z",
-            "posts": [],
-            "friends": [
-              {
-                "id": 2,
-                "name": "Spong bob",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "Spongbob@example.com",
-                "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              },
-              {
-                "id": 4,
-                "name": "Iron man",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "ironman@example.com",
-                "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              }
-            ]
-          },
-          "createdAt": "2024-09-13T16:04:09.089Z"
-        },
-        {
-          "id": "3",
-          "body": "Hello no",
-          "author": {
-            "id": "1",
-            "name": "Spider man",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "spiderman@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-            "createdAt": "2023-08-12T19:12:59.956Z",
-            "posts": [],
-            "friends": [
-              {
-                "id": 2,
-                "name": "Spong bob",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "Spongbob@example.com",
-                "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              },
-              {
-                "id": 4,
-                "name": "Iron man",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "ironman@example.com",
-                "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              }
-            ]
-          },
-          "createdAt": "2024-09-13T16:04:09.089Z"
-        },
-        {
-          "id": 1726367110149,
-          "author": {
-            "id": "2",
-            "name": "Spong bob",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "Spongbob@example.com",
-            "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-            "createdAt": "2024-09-12T19:12:59.956Z",
-            "posts": [],
-            "friends": [
-              {
-                "id": 1,
-                "name": "Spider man",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "spiderman@example.com",
-                "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-                "createdAt": "2023-08-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              },
-              {
-                "id": 3,
-                "name": "Captain America",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "captainamerica@example.com",
-                "profilePictureUrl": "https://toppng.com/uploads/preview/free-icons-captain-america-11553541790llhrflvlzz.png",
-                "createdAt": "2023-08-12T19:12:59.956Z",
-                "posts": [],
-                "friends": [
-                  {
-                    "id": 2,
-                    "name": "Spong bob",
-                    "password": "123456",
-                    "bio": "A passionate developer with a love for Angular.",
-                    "email": "Spongbob@example.com",
-                    "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-                    "createdAt": "2024-09-12T19:12:59.956Z",
-                    "posts": [],
-                    "friends": []
-                  }
-                ]
-              }
-            ]
-          },
-          "body": "bye",
-          "createdAt": "2024-09-15T02:25:10.149Z"
-        }
+      "id": 1,
+      "username": "john_doe",
+      "password": "hashed_password1",
+      "profile_picture": "../../../assets/images/default-profile-picture-url.webp",
+      "isActive": true,
+      "createdAt": "2024-09-15T08:00:00Z",
+      "email": "john.doe@example.com",
+      "bio": "Software developer and tech enthusiast.",
+      "posts": [
+        1,
+        2
+      ],
+      "friends": [
+        2
       ]
     },
     {
-      "id": "1726243449089",
-      "title": "New Post",
-      "body": "hello",
-      "author": {
-        "id": 1726243449089,
-        "name": "Ismail",
-        "password": "123456",
-        "createdAt": "2024-09-13T16:04:09.089Z",
-        "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg"
-      },
-      "createdAt": "2024-09-13T16:04:09.089Z",
-      "comments": []
-    },
-    {
-      "id": "1726251642173",
-      "title": "New Post",
-      "body": "Smash\n",
-      "author": {
-        "id": 5,
-        "name": "Hulk",
-        "password": "123456",
-        "bio": "A passionate developer with a love for Angular.",
-        "email": "hulk@example.com",
-        "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-        "createdAt": "2024-09-12T19:12:59.956Z",
-        "posts": [],
-        "friends": [
-          {
-            "id": 1,
-            "name": "Spider man",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "spiderman@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-            "createdAt": "2023-08-12T19:12:59.956Z",
-            "posts": [],
-            "friends": []
-          },
-          {
-            "id": 1,
-            "name": "Iron man",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "ironman@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-            "createdAt": "2024-09-12T19:12:59.956Z",
-            "posts": [],
-            "friends": []
-          },
-          {
-            "id": 1,
-            "name": "Hulk",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "hulk@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-            "createdAt": "2024-09-12T19:12:59.956Z",
-            "posts": [],
-            "friends": []
-          }
-        ]
-      },
-      "createdAt": "2024-09-13T18:20:42.173Z",
-      "comments": []
-    },
-    {
-      "id": "1726251680431",
-      "title": "New Post",
-      "body": "I am iron man",
-      "author": {
-        "id": 4,
-        "name": "Iron man",
-        "password": "123456",
-        "bio": "A passionate developer with a love for Angular.",
-        "email": "ironman@example.com",
-        "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-        "createdAt": "2024-09-12T19:12:59.956Z",
-        "posts": [],
-        "friends": [
-          {
-            "id": 1,
-            "name": "Spider man",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "spiderman@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-            "createdAt": "2023-08-12T19:12:59.956Z",
-            "posts": [],
-            "friends": []
-          },
-          {
-            "id": 5,
-            "name": "Hulk",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "hulk@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-            "createdAt": "2024-09-12T19:12:59.956Z",
-            "posts": [],
-            "friends": []
-          }
-        ]
-      },
-      "createdAt": "2024-09-13T18:21:20.431Z",
-      "comments": [
-        {
-          "id": "1",
-          "author": {
-            "id": "3",
-            "name": "Captain America",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "captainamerica@example.com",
-            "profilePictureUrl": "https://toppng.com/uploads/preview/free-icons-captain-america-11553541790llhrflvlzz.png",
-            "createdAt": "2023-08-12T19:12:59.956Z",
-            "posts": [],
-            "friends": [
-              {
-                "id": 2,
-                "name": "Spong bob",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "Spongbob@example.com",
-                "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              },
-              {
-                "id": 5,
-                "name": "Hulk",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "hulk@example.com",
-                "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              }
-            ]
-          },
-          "body": "I thought you were done with that.",
-          "createdAt": "2024-09-13T18:22:00.000Z"
-        },
-        {
-          "id": 1726333254832,
-          "author": {
-            "id": 1,
-            "name": "Ismail",
-            "password": "123456",
-            "profilePictureUrl": "default.jpg",
-            "createdAt": "2024-09-14T17:00:54.832Z"
-          },
-          "body": "Hello",
-          "createdAt": "2024-09-14T17:00:54.832Z"
-        }
-      ]
-    },
-    {
-      "id": "1726251730615",
-      "title": "New Post",
-      "body": "on your left",
-      "author": {
-        "id": 3,
-        "name": "Captain America",
-        "password": "123456",
-        "bio": "A passionate developer with a love for Angular.",
-        "email": "captainamerica@example.com",
-        "profilePictureUrl": "https://toppng.com/uploads/preview/free-icons-captain-america-11553541790llhrflvlzz.png",
-        "createdAt": "2023-08-12T19:12:59.956Z",
-        "posts": [],
-        "friends": [
-          {
-            "id": 2,
-            "name": "Spong bob",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "Spongbob@example.com",
-            "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-            "createdAt": "2024-09-12T19:12:59.956Z",
-            "posts": [],
-            "friends": []
-          },
-          {
-            "id": 5,
-            "name": "Hulk",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "hulk@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-            "createdAt": "2024-09-12T19:12:59.956Z",
-            "posts": [],
-            "friends": []
-          }
-        ]
-      },
-      "createdAt": "2024-09-13T18:22:10.615Z",
-      "comments": [
-        {
-          "id": 1726359086498,
-          "author": {
-            "id": "1",
-            "name": "Spider man",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "spiderman@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-            "createdAt": "2023-08-12T19:12:59.956Z",
-            "posts": [],
-            "friends": [
-              {
-                "id": 2,
-                "name": "Spong bob",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "Spongbob@example.com",
-                "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              },
-              {
-                "id": 4,
-                "name": "Iron man",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "ironman@example.com",
-                "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              }
-            ]
-          },
-          "body": "bye",
-          "createdAt": "2024-09-15T00:11:26.498Z"
-        }
-      ]
-    },
-    {
-      "id": "1726251825103",
-      "title": "New Post",
-      "body": "Uncle ben, Gwen Stacy, Aunt May all dead 😢",
-      "author": {
-        "id": 1,
-        "name": "Spider man",
-        "password": "123456",
-        "bio": "A passionate developer with a love for Angular.",
-        "email": "spiderman@example.com",
-        "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-        "createdAt": "2023-08-12T19:12:59.956Z",
-        "posts": [],
-        "friends": []
-      },
-      "createdAt": "2024-09-13T18:22:05.103Z",
-      "comments": [
-        {
-          "id": "1",
-          "author": {
-            "id": "4",
-            "name": "Iron man",
-            "password": "123456",
-            "bio": "A passionate developer with a love for Angular.",
-            "email": "ironman@example.com",
-            "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-            "createdAt": "2024-09-12T19:12:59.956Z",
-            "posts": [],
-            "friends": [
-              {
-                "id": 1,
-                "name": "Spider man",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "spiderman@example.com",
-                "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-                "createdAt": "2023-08-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              },
-              {
-                "id": 5,
-                "name": "Hulk",
-                "password": "123456",
-                "bio": "A passionate developer with a love for Angular.",
-                "email": "hulk@example.com",
-                "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-                "createdAt": "2024-09-12T19:12:59.956Z",
-                "posts": [],
-                "friends": []
-              }
-            ]
-          },
-          "body": "They will always be remembered.",
-          "createdAt": "2024-09-13T18:23:00.000Z"
-        }
+      "id": 2,
+      "username": "jane_smith",
+      "password": "hashed_password2",
+      "profile_picture": "../../../assets/images/default-profile-picture-url.webp",
+      "isActive": true,
+      "createdAt": "2024-09-14T08:00:00Z",
+      "email": "jane.smith@example.com",
+      "bio": "Digital marketer and content creator.",
+      "posts": [
+        3
+      ],
+      "friends": [
+        1
       ]
     }
   ],
-  "Authors": [
+  "posts": [
     {
       "id": "1",
-      "name": "Spider man",
-      "password": "123456",
-      "bio": "A passionate developer with a love for Angular.",
-      "email": "spiderman@example.com",
-      "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-      "createdAt": "2023-08-12T19:12:59.956Z",
-      "posts": [],
-      "friends": [
+      "userId": 1,
+      "content": "Just test a new project, excited to share it soon!",
+      "createdAt": "2024-09-15T09:00:00Z",
+      "likes": [
         {
-          "id": 2,
-          "name": "Spong bob",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "Spongbob@example.com",
-          "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-          "createdAt": "2024-09-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
-        },
+          "userId": 2
+        }
+      ],
+      "comments": [
         {
-          "id": 4,
-          "name": "Iron man",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "ironman@example.com",
-          "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-          "createdAt": "2024-09-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
+          "id": "1",
+          "content": "Hi! Can't wait to see it.",
+          "PostId": 1,
+          "UserId": 2,
+          "createdAt": "2024-09-15T09:30:00Z"
         }
       ]
     },
     {
       "id": "2",
-      "name": "Spong bob",
-      "password": "123456",
-      "bio": "A passionate developer with a love for Angular.",
-      "email": "Spongbob@example.com",
-      "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-      "createdAt": "2024-09-12T19:12:59.956Z",
-      "posts": [],
-      "friends": [
-        {
-          "id": 1,
-          "name": "Spider man",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "spiderman@example.com",
-          "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-          "createdAt": "2023-08-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
-        },
-        {
-          "id": 3,
-          "name": "Captain America",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "captainamerica@example.com",
-          "profilePictureUrl": "https://toppng.com/uploads/preview/free-icons-captain-america-11553541790llhrflvlzz.png",
-          "createdAt": "2023-08-12T19:12:59.956Z",
-          "posts": [],
-          "friends": [
-            {
-              "id": 2,
-              "name": "Spong bob",
-              "password": "123456",
-              "bio": "A passionate developer with a love for Angular.",
-              "email": "Spongbob@example.com",
-              "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-              "createdAt": "2024-09-12T19:12:59.956Z",
-              "posts": [],
-              "friends": []
-            }
-          ]
-        }
-      ]
+      "userId": 1,
+      "content": "Working on a new blog post about programming best practices.",
+      "createdAt": "2024-09-14T10:00:00Z",
+      "likes": [],
+      "comments": []
     },
     {
       "id": "3",
-      "name": "Captain America",
-      "password": "123456",
-      "bio": "A passionate developer with a love for Angular.",
-      "email": "captainamerica@example.com",
-      "profilePictureUrl": "https://toppng.com/uploads/preview/free-icons-captain-america-11553541790llhrflvlzz.png",
-      "createdAt": "2023-08-12T19:12:59.956Z",
-      "posts": [],
-      "friends": [
+      "userId": 2,
+      "content": "Just launched my new digital marketing course!",
+      "createdAt": "2024-09-13T12:00:00Z",
+      "likes": [
         {
-          "id": 2,
-          "name": "Spong bob",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "Spongbob@example.com",
-          "profilePictureUrl": "https://w0.peakpx.com/wallpaper/814/650/HD-wallpaper-spongebob-squarepants-minimalist-cartoons-spongebob-spongebob-squarepants-minimalism-minimalist-yellow-deviantart.jpg",
-          "createdAt": "2024-09-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
-        },
-        {
-          "id": 5,
-          "name": "Hulk",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "hulk@example.com",
-          "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-          "createdAt": "2024-09-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
+          "userId": 1
         }
-      ]
-    },
-    {
-      "id": "4",
-      "name": "Iron man",
-      "password": "1234567",
-      "bio": "A passionate developer with a love for Angular.",
-      "email": "ironman@example.com",
-      "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-      "createdAt": "2024-09-12T19:12:59.956Z",
-      "posts": [],
-      "friends": [
-        {
-          "id": 1,
-          "name": "Spider man",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "spiderman@example.com",
-          "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-          "createdAt": "2023-08-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
-        },
-        {
-          "id": 5,
-          "name": "Hulk",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "hulk@example.com",
-          "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-          "createdAt": "2024-09-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "name": "Hulk",
-      "password": "123456",
-      "bio": "A passionate developer with a love for Angular.",
-      "email": "hulk@example.com",
-      "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-      "createdAt": "2024-09-12T19:12:59.956Z",
-      "posts": [],
-      "friends": [
-        {
-          "id": 1,
-          "name": "Spider man",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "spiderman@example.com",
-          "profilePictureUrl": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
-          "createdAt": "2023-08-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
-        },
-        {
-          "id": 1,
-          "name": "Iron man",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "ironman@example.com",
-          "profilePictureUrl": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
-          "createdAt": "2024-09-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
-        },
-        {
-          "id": 1,
-          "name": "Hulk",
-          "password": "123456",
-          "bio": "A passionate developer with a love for Angular.",
-          "email": "hulk@example.com",
-          "profilePictureUrl": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
-          "createdAt": "2024-09-12T19:12:59.956Z",
-          "posts": [],
-          "friends": []
-        }
-      ]
+      ],
+      "comments": []
     }
   ]
 }

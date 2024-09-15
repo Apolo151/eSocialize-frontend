@@ -17,7 +17,7 @@ export class NewPostComponent {
 
   ngOnInit(): void {
     if (this.author != null){
-     this.authorImg = this.author.profilePictureUrl
+     this.authorImg = this.author.profile_picture
     }else{
       console.log("No author")
     }
@@ -28,11 +28,11 @@ export class NewPostComponent {
     if (this.new_post_text.trim()) {
       const newPost: Post = {
         id: Date.now(), 
-        title: 'New Post',
-        body: this.new_post_text,
-        author : this.author,
+        content: this.new_post_text,
+        userId : this.author.id,
         createdAt: new Date() ,
-        comments:[]
+        comments:[],
+        likes: []
       };
 
       this.postAdded.emit(newPost);
