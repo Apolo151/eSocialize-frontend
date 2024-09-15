@@ -2,13 +2,13 @@
   "Authors": [
     {
       "id": "1",
-      "username": "alex_jones",
+      "username": "test",
       "password": "hashed_password_alex",
       "profile_picture": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
       "isActive": true,
       "createdAt": "2024-09-10T08:00:00Z",
       "email": "alex.jones@example.com",
-      "bio": "Tech enthusiast and software engineer.",
+      "bio": "test",
       "posts": [
         4,
         5
@@ -69,6 +69,20 @@
           "PostId": "4",
           "UserId": "1",
           "createdAt": "2024-09-15T16:43:24.026Z"
+        },
+        {
+          "id": 1726434348709,
+          "content": "test",
+          "PostId": "4",
+          "UserId": "1",
+          "createdAt": "2024-09-15T21:05:48.709Z"
+        },
+        {
+          "id": 1726434354389,
+          "content": "test",
+          "PostId": "4",
+          "UserId": "2",
+          "createdAt": "2024-09-15T21:05:54.389Z"
         }
       ]
     },
@@ -140,6 +154,14 @@
       "content": "hello",
       "userId": "1",
       "createdAt": "2024-09-15T20:36:34.599Z",
+      "comments": [],
+      "likes": []
+    },
+    {
+      "id": "1726434356854",
+      "content": "test",
+      "userId": "2",
+      "createdAt": "2024-09-15T21:05:56.854Z",
       "comments": [],
       "likes": []
     }

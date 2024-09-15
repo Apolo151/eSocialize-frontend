@@ -49,3 +49,68 @@
     margin-bottom: 5px;
   }
   
+
+.edit-profile-container {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.edit-button{
+  padding: 5px 10px;
+  margin-top:5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-field, .textarea-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.input-field:focus, .textarea-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.textarea-field {
+  height: 100px;
+  resize: vertical;
+}
+
+.save-button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}

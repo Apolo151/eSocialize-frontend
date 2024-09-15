@@ -97,65 +97,65 @@ export class PostComponent implements OnChanges {
     this.postDeleted.emit(this.post.id);
   }
 
- // Comment logic
- comment: string = "";
- addComment(): void {
-  if (this.comment.trim()) {
-    const newComment: PostComment = {
-      id: Date.now(),
-      content: this.comment,
-      PostId: this.post.id,
-      UserId: this.loggedAuthor!.id,
-      createdAt: new Date(),
-    };
+  // Comment logic
+  comment: string = "";
+  addComment(): void {
+    if (this.comment.trim()) {
+      const newComment: PostComment = {
+        id: Date.now(),
+        content: this.comment,
+        PostId: this.post.id,
+        UserId: this.loggedAuthor!.id,
+        createdAt: new Date(),
+      };
 
-    this.post.comments.push(newComment);
+      this.post.comments.push(newComment);
+      this.postUpdated.emit(this.post);
+      this.comment = '';
+    }
+  }
+
+  startEditComment(comment: PostComment): void {
+    this.editingCommentId = comment.id;
+    // Optionally store the original content if needed for cancel
+  }
+
+  saveCommentEdit(comment: PostComment): void {
+    // Update the comment in post.comments
+    const index = this.post.comments.findIndex(c => c.id === comment.id);
+    if (index !== -1) {
+      this.post.comments[index].content = comment.content;
+    }
     this.postUpdated.emit(this.post);
-    this.comment = '';
+    this.editingCommentId = null;
   }
-}
 
-startEditComment(comment: PostComment): void {
-  this.editingCommentId = comment.id;
-  // Optionally store the original content if needed for cancel
-}
-
-saveCommentEdit(comment: PostComment): void {
-  // Update the comment in post.comments
-  const index = this.post.comments.findIndex(c => c.id === comment.id);
-  if (index !== -1) {
-    this.post.comments[index].content = comment.content;
+  cancelCommentEdit(comment: PostComment): void {
+    this.editingCommentId = null;
+    // Optionally restore the original content if needed
   }
-  this.postUpdated.emit(this.post);
-  this.editingCommentId = null;
-}
 
-cancelCommentEdit(comment: PostComment): void {
-  this.editingCommentId = null;
-  // Optionally restore the original content if needed
-}
+  confirmDeleteComment(comment: PostComment): void {
+    this.deletingCommentId = comment.id;
+  }
 
-confirmDeleteComment(comment: PostComment): void {
-  this.deletingCommentId = comment.id;
-}
+  deleteComment(comment: PostComment): void {
+    this.post.comments = this.post.comments.filter(c => c.id !== comment.id);
+    this.postUpdated.emit(this.post);
+    this.deletingCommentId = null;
+  }
 
-deleteComment(comment: PostComment): void {
-  this.post.comments = this.post.comments.filter(c => c.id !== comment.id);
-  this.postUpdated.emit(this.post);
-  this.deletingCommentId = null;
-}
+  cancelDeleteComment(): void {
+    this.deletingCommentId = null;
+  }
 
-cancelDeleteComment(): void {
-  this.deletingCommentId = null;
-}
+  getCommentAuthorProfilePicture(authorId: number): string {
+    const author = this.commentAuthors.get(authorId);
+    return author?.profile_picture || '../../../assets/images/default-profile-picture-url.webp';
+  }
 
-getCommentAuthorProfilePicture(authorId: number): string {
-  const author = this.commentAuthors.get(authorId);
-  return author?.profile_picture || '../../../assets/images/default-profile-picture-url.webp';
-}
-
-getCommentAuthorName(authorId: number): string {
-  const author = this.commentAuthors.get(authorId);
-  return author?.username || 'Unknown';
-}
+  getCommentAuthorName(authorId: number): string {
+    const author = this.commentAuthors.get(authorId);
+    return author?.username || 'Unknown';
+  }
 }

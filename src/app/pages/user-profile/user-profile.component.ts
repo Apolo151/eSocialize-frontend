@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Author } from 'src/app/models/author';
 import { ActivatedRoute } from '@angular/router';
 import { AuthorsService } from 'src/app/services/authors.service';
@@ -17,7 +17,7 @@ export class UserProfileComponent implements OnInit {
   errorMessage?: string;
   isEditingProfile = false;
   editingAuthor: Author = { id: -1, username: '', email: '', bio: '', profile_picture: '', createdAt: new Date(), password: ' ' }; 
-
+  @Output() loggedAuthor! : Author;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +36,8 @@ export class UserProfileComponent implements OnInit {
     this.authorService.getAuthor(this.authorId).subscribe({
       next: (data) => {
         this.author = data;
+        this.loggedAuthor = data;
+        this.editingAuthor = data;
         this.loadPosts();
       },
       error: (error) => {
@@ -56,6 +58,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   updateProfile(): void {
+    console.group(this.editingAuthor);
     if (this.editingAuthor) {
       this.authorService.updateAuthor(this.editingAuthor).subscribe({
         next: updatedAuthor => {
