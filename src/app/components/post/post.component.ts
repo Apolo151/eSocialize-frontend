@@ -24,6 +24,7 @@ export class PostComponent implements OnChanges {
   editingCommentId: number | null = null;
   deletingCommentId: number | null = null;
   postAuthor: Author | null = null;
+  postTime ='';
   
   commentAuthors: Map<number, Author> = new Map();
 
@@ -32,9 +33,22 @@ export class PostComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['post'] && changes['post'].currentValue) {
       this.beforeEdit = this.post.content;
+      this.postTime = this.formatDate(new Date((this.post.createdAt)))
       this.loadAuthor(); // Fetch the post author when the post changes
       this.loadCommentAuthors(); // Fetch the authors for comments
     }
+  }
+
+  formatDate(date: Date): string {
+    const options: Intl.DateTimeFormatOptions = {
+      day: '2-digit',
+      month: '2-digit',
+      year: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    };
+    return new Intl.DateTimeFormat('en-GB', options).format(date);
   }
 
   loadAuthor(): void {

@@ -139,13 +139,6 @@
           "PostId": "7",
           "UserId": "1",
           "createdAt": "2024-09-15T16:30:00Z"
-        },
-        {
-          "id": 1726433586326,
-          "content": "bye",
-          "PostId": "7",
-          "UserId": "1",
-          "createdAt": "2024-09-15T20:53:06.326Z"
         }
       ]
     },
@@ -163,6 +156,22 @@
       "userId": "2",
       "createdAt": "2024-09-15T21:05:56.854Z",
       "comments": [],
+      "likes": []
+    },
+    {
+      "id": "1726446626108",
+      "content": "byeeee",
+      "userId": "2",
+      "createdAt": "2024-09-16T00:30:26.108Z",
+      "comments": [
+        {
+          "id": 1726448746743,
+          "content": "hello",
+          "PostId": "1726446626108",
+          "UserId": "2",
+          "createdAt": "2024-09-16T01:05:46.743Z"
+        }
+      ],
       "likes": []
     }
   ]

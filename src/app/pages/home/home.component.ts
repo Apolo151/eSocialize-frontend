@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   loadPosts(): void {
     this.postService.getPosts().subscribe({
       next: (res: Post[]) => {
-        this.posts = [...res];
+        this.posts = [...res].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
         console.log(res);
       },
       error: (err) => {

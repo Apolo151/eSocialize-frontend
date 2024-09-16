@@ -20,15 +20,17 @@ export class SideNavComponent implements OnChanges {
   }
 
   loadFriends(): void {
-    if (this.author && this.author.id) {
-      this.authorsService.getFriends(this.author.id).subscribe(
-        (friends) => {
-          this.friends = friends;
+    console.clear()
+    if(this.author.friends){
+      this.authorsService.getFriends(this.author.friends).subscribe({
+        next: (response) => {
+         this.friends = response
+          console.log(response);
         },
-        (error) => {
-          console.error('Error fetching friends:', error);
+        error: (error) =>{
+          console.error("Error loading friend: ", error.message )
         }
-      );
+      })
     }
   }
 }

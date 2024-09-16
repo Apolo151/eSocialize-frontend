@@ -33,6 +33,19 @@
     margin-top: 32px;
 }
 
+.likes-comments-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-right: 8px;
+}
+
+.likes-comments-container p {
+  font-size: 12px;
+  color: gray;
+  margin: 0;
+}
+
 .comments-container {
   display: flex;
   flex-direction: column;
@@ -115,12 +128,12 @@ textarea {
     position: relative;
     display: inline-block;
   }
-  .dropdown button{
+.dropdown button{
     border:none;
     background-color: #ffff;
     cursor: pointer;
   }
-  .dropdown-menu {
+.dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -133,11 +146,11 @@ textarea {
     min-width: 120px;
   }
   
-  .dropdown-menu.show {
+.dropdown-menu.show {
     display: block;
   }
   
-  .dropdown-menu button {
+.dropdown-menu button {
     display: block;
     width: 100%;
     padding: 10px 15px;
@@ -153,7 +166,7 @@ textarea {
     background-color: #f1f1f1;
   }
     
-  .save-button {
+.save-button {
     background-color: #4CAF50; 
     border: none;
     color: white;
@@ -168,11 +181,11 @@ textarea {
     transition: background-color 0.3s ease;
   }
   
-  .save-button:hover {
+.save-button:hover {
     background-color: #45a049;
   }
   
-  .cancel-button {
+.cancel-button {
     background-color: #f44336; 
     border: none;
     color: white;
@@ -187,11 +200,11 @@ textarea {
     transition: background-color 0.3s ease;
   }
   
-  .cancel-button:hover {
+.cancel-button:hover {
     background-color: #d32f2f;
   }
   
-  textarea:focus {
+textarea:focus {
     border: none;
     outline: none;
     background-color: #f0f0f0;

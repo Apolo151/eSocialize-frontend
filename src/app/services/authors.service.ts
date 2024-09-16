@@ -15,14 +15,11 @@ export class AuthorsService {
   private apiUrl = 'http://localhost:5000/Authors'
   constructor(private http:HttpClient) { }
 
-  getFriends(authorId: number): Observable<Author[]> {
+  getFriends(friendIds: number[]): Observable<Author[]> {
     return this.getAllAuthor().pipe(
       map((authors: Author[]) => {
-        const specificAuthor = authors.find(author => author.id === authorId);
-        if (specificAuthor && specificAuthor.friends) {
-          return authors.filter(author => specificAuthor.friends?.includes(author.id));
-        }
-        return [];
+        const friends = authors.filter(author => friendIds.includes(+author.id));
+        return friends;
       })
     );
   }
@@ -47,7 +44,6 @@ export class AuthorsService {
     const url = `${this.apiUrl}/${author.id}`;
     return this.http.put<Author>(url, author); 
   }
-
 
   authorLogIn(authorEmail: string, authorPassword: string): Observable<Author | null>{
     return this.http.get<Author[]>(this.apiUrl).pipe(
