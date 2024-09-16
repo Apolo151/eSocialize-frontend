@@ -39,10 +39,11 @@ export class HeaderComponent {
   }
 
   loadAllAutohrs(){
-    this.authorService.getAllAuthor().subscribe(
+    console.log("hello")
+    this.authorService.getAllAuthors().subscribe(
       (response: Author[]) => {
         this.authors = response
-        console.log([this.author])
+        console.log(this.authors)
       },
       (error) =>{
         this.errorMessege = 'Failed to load authors';

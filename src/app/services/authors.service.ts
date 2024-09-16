@@ -16,14 +16,14 @@ export class AuthorsService {
   private newApiUrl = 'https://c856-41-199-138-62.ngrok-free.app/api/Authors'
   constructor(private http:HttpClient) { }
 
-  getAllAuthor(): Observable<Author[]>{
+  getAllAuthors(): Observable<Author[]>{
     return this.http.get<Author[]>(this.newApiUrl)
   }
  
-/*  getAllAuthor(): Observable<Author[]>{
+  getAllAuthor(): Observable<Author[]>{
     return this.http.get<Author[]>(this.apiUrl);
   }
-*/
+
   getFriends(friendIds: number[]): Observable<Author[]> {
     return this.getAllAuthor().pipe(
       map((authors: Author[]) => {

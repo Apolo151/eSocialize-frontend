@@ -20,7 +20,6 @@ export class SideNavComponent implements OnChanges {
   }
 
   loadFriends(): void {
-    console.clear()
     if(this.author.friends){
       this.authorsService.getFriends(this.author.friends).subscribe({
         next: (response) => {

@@ -18,7 +18,6 @@ export class LoginComponent {
 
   }
   onLogin(){
-    console.clear
     if(this.userNameText.length && this.userNamePassword){
       this.authorService.authorLogIn(this.userNameText,this.userNamePassword).subscribe((author) => {
         if(author){
