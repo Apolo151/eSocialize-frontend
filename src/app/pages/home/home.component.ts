@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     this.postService.getPosts().subscribe({
       next: (res: Post[]) => {
         this.posts = [...res].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-        console.log(res);
+        console.log(this.posts)
       },
       error: (err) => {
         console.error('Error fetching posts:', err);
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadAllAutohrs(){
-    this.authorService.getAllAuthor().subscribe(
+    this.authorService.getAllAuthors().subscribe(
       (response: Author[]) => {
         this.authors = response
       },
@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
     this.postService.addPost(newPost).subscribe({
       next: (post) => {
         console.log('Post added successfully:', post);
-        this.posts.push(post);
+        this.posts.push(newPost);
       },
       error: (err) => {
         console.error('Error adding post:', err);
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
   }
 
   handlePostDeleted(postId: number): void {
-    this.postService.deletePost(postId.toString()).subscribe({
+    this.postService.deletePost(postId).subscribe({
       
       next: () => {
         console.log('Post deleted successfully');

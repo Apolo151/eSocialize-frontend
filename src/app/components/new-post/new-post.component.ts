@@ -29,7 +29,7 @@ export class NewPostComponent {
       const newPost: Post = {
         id: Date.now(), 
         content: this.new_post_text,
-        userId : this.author.id,
+        author : this.author,
         createdAt: new Date() ,
         comments:[],
         likes: []

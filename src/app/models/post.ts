@@ -3,10 +3,10 @@ import {PostComment} from 'src/app/models/comment';
 import {Like} from 'src/app/models/like';
 export interface Post {
     id: number;     
-    userId: number;
+    author: Author;
     content: string;   
     createdAt: Date;
-    likes: Like[];
+    likes?: Like[];
     comments: PostComment[];
   } 
   

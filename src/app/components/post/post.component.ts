@@ -58,23 +58,14 @@ export class PostComponent implements OnChanges {
   }
 
   loadAuthor(): void {
-    if (this.post.userId) {
-      this.authorsService.getAuthor(this.post.userId.toString()).subscribe({
-        next: (author: Author) => {
-          this.postAuthor = author;
-        },
-        error: (err) => {
-          console.error('Error fetching post author:', err);
-          this.postAuthor = null;
-        }
-      });
-    }
-  }
-
+      this.postAuthor = this.post.author;
+      console.log(this.postAuthor.userName)
+      console.log(this.post.content)
+}
+  
   // Fetch all authors for comments
   loadCommentAuthors(): void {
-    // Assuming this method fetches all authors and updates commentAuthors map
-    this.authorsService.getAllAuthor().subscribe((authors: Author[]) => {
+    this.authorsService.getAllAuthors().subscribe((authors: Author[]) => {
       authors.forEach(author => {
         this.commentAuthors.set(author.id, author);
       });
@@ -181,7 +172,7 @@ export class PostComponent implements OnChanges {
 
   likePost() {
 
-    const likedBefore = this.post.likes.find(like => +like.UserId === +this.loggedAuthor.id)
+    const likedBefore = this.post.likes?.find(like => +like.UserId === +this.loggedAuthor.id)
     
     if(!likedBefore){
       const like : Like = {
@@ -191,11 +182,11 @@ export class PostComponent implements OnChanges {
         createdAt: new Date(),
       }
   
-      this.post.likes.push(like)
+      this.post.likes?.push(like)
       this.postUpdated.emit(this.post)
     }
 
-    this.post.likes = this.post.likes.filter(l => l !== likedBefore);
+    this.post.likes = this.post.likes?.filter(l => l !== likedBefore);
     this.postUpdated.emit(this.post);
 
   }

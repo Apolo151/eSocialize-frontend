@@ -74,7 +74,7 @@ export class UserProfileComponent implements OnInit {
 
 
   handlePostDeleted(postId: number): void {
-    this.postService.deletePost(postId.toString()).subscribe({
+    this.postService.deletePost(postId).subscribe({
       
       next: () => {
         console.log('Post deleted successfully');
