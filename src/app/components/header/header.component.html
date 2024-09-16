@@ -24,5 +24,5 @@
 
       <fa-icon class="dropdown-icon" (click)="logOut()" [icon]="faSignOut"></fa-icon>
 
-      <a [routerLink]="['/user', author.id]"><app-avatar [img]="imageUrl"></app-avatar></a>
+      <a [routerLink]="['/user', author.id]"><app-avatar [img]="imageUrl || './../../assets/images/default-profile-picture-url.webp'"></app-avatar></a>
 </div>

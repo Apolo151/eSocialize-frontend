@@ -13,8 +13,17 @@ import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
 export class AuthorsService {
 
   private apiUrl = 'http://localhost:5000/Authors'
+  private newApiUrl = 'https://c856-41-199-138-62.ngrok-free.app/api/Authors'
   constructor(private http:HttpClient) { }
 
+  getAllAuthor(): Observable<Author[]>{
+    return this.http.get<Author[]>(this.newApiUrl)
+  }
+ 
+/*  getAllAuthor(): Observable<Author[]>{
+    return this.http.get<Author[]>(this.apiUrl);
+  }
+*/
   getFriends(friendIds: number[]): Observable<Author[]> {
     return this.getAllAuthor().pipe(
       map((authors: Author[]) => {
@@ -36,10 +45,6 @@ export class AuthorsService {
     );
   }
 
-  getAllAuthor(): Observable<Author[]>{
-    return this.http.get<Author[]>(this.apiUrl);
-  }
-
   updateAuthor(author: Author): Observable<Author> {
     const url = `${this.apiUrl}/${author.id}`;
     return this.http.put<Author>(url, author); 
@@ -48,7 +53,7 @@ export class AuthorsService {
   authorLogIn(authorEmail: string, authorPassword: string): Observable<Author | null>{
     return this.http.get<Author[]>(this.apiUrl).pipe(
       map((authors: Author[]) =>{
-        const specificAuthor = authors.find(author => author.username === authorEmail);
+        const specificAuthor = authors.find(author => author.userName === authorEmail);
         if(specificAuthor && specificAuthor.password === authorPassword)
         {
           return specificAuthor  

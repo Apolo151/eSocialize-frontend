@@ -16,7 +16,7 @@ export class UserProfileComponent implements OnInit {
   author?: Author;
   errorMessage?: string;
   isEditingProfile = false;
-  editingAuthor: Author = { id: -1, username: '', email: '', bio: '', profile_picture: '', createdAt: new Date(), password: ' ' }; 
+  editingAuthor: Author = { id: -1, userName: '', email: '', bio: '', profilePicture: '', createdAt: new Date(), password: ' ' }; 
   @Output() loggedAuthor! : Author;
 
   constructor(
@@ -110,6 +110,6 @@ export class UserProfileComponent implements OnInit {
 
 
   getProfilePicture(): string {
-    return this.author?.profile_picture || '../../../assets/images/default-profile-picture-url.webp';
+    return this.author?.profilePicture || '../../../assets/images/default-profile-picture-url.webp';
   }
 }

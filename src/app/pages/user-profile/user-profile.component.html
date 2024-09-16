@@ -2,7 +2,7 @@
     <div class="user-profile-header">
       <img class="profile-picture" [src]="getProfilePicture()" alt="Profile Picture">
       <div class="author-details">
-        <h2>{{ author?.username }}</h2>
+        <h2>{{ author?.userName }}</h2>
         <p class="bio">{{ author?.bio || 'No bio available' }}</p>
         <button class ="edit-button" (click)="isEditingProfile = !isEditingProfile">
           {{ isEditingProfile ? 'Cancel' : 'Edit Profile' }}
@@ -19,7 +19,7 @@
         <form (ngSubmit)="updateProfile()" class="edit-profile-form">
           <div class="form-group">
             <label for="username">Username:</label>
-            <input [(ngModel)]="editingAuthor.username" name="username" required id="username" class="input-field">
+            <input [(ngModel)]="editingAuthor.userName" name="username" required id="username" class="input-field">
           </div>
           <div class="form-group">
             <label for="bio">Bio:</label>

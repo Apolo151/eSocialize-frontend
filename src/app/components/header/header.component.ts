@@ -20,7 +20,7 @@ export class HeaderComponent {
   faAdd = faAdd;
   faSignOut = faSignOut;
 
-  imageUrl = '';
+  imageUrl? = '';
   logoUrl = 'https://media.istockphoto.com/id/1032803298/vector/concept-of-sharing-ideas-between-a-social-network.jpg?s=612x612&w=0&k=20&c=oBL1v-YS_gEtDGC2PPB1bd9ppJRtSlS88JRUBOIY9aE='
 
   constructor(private authorService: AuthorsService, private router: Router){}
@@ -28,7 +28,7 @@ export class HeaderComponent {
   ngOnInit(): void {
     this.loadAllAutohrs();
     if (this.author != null){
-     this.imageUrl = this.author.profile_picture;
+     this.imageUrl = this.author.profilePicture;
     }else{
       console.log("No author")
     }
@@ -42,6 +42,7 @@ export class HeaderComponent {
     this.authorService.getAllAuthor().subscribe(
       (response: Author[]) => {
         this.authors = response
+        console.log([this.author])
       },
       (error) =>{
         this.errorMessege = 'Failed to load authors';
@@ -52,7 +53,7 @@ export class HeaderComponent {
   addFriend(id : number){
     const author = this.authors.find(author => author.id.toString() === id.toString());
     if(this.author.friends?.toString().includes(id.toString())){
-      alert(author?.username + " is already your friend")
+      alert(author?.userName + " is already your friend")
     }
     else{
       this.author.friends?.push(Number(id))

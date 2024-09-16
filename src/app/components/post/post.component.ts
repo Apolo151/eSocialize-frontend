@@ -82,7 +82,7 @@ export class PostComponent implements OnChanges {
   }
 
   getProfilePictureUrl(): string {
-    return this.postAuthor?.profile_picture || '../../../assets/images/default-profile-picture-url.webp';
+    return this.postAuthor?.profilePicture || '../../../assets/images/default-profile-picture-url.webp';
   }
 
   toggleDropdown(): void {
@@ -171,12 +171,12 @@ export class PostComponent implements OnChanges {
 
   getCommentAuthorProfilePicture(authorId: number): string {
     const author = this.commentAuthors.get(authorId);
-    return author?.profile_picture || '../../../assets/images/default-profile-picture-url.webp';
+    return author?.profilePicture || '../../../assets/images/default-profile-picture-url.webp';
   }
 
   getCommentAuthorName(authorId: number): string {
     const author = this.commentAuthors.get(authorId);
-    return author?.username || 'Unknown';
+    return author?.userName || 'Unknown';
   }
 
   likePost() {

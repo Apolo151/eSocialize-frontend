@@ -12,12 +12,12 @@ export class NewPostComponent {
   @Input() author!: Author;
   @Output() postAdded = new EventEmitter<Post>();
   new_post_text: string = '';
-  authorImg : string ='';
+  authorImg? : string ='';
   
 
   ngOnInit(): void {
     if (this.author != null){
-     this.authorImg = this.author.profile_picture
+     this.authorImg = this.author.profilePicture
     }else{
       console.log("No author")
     }
