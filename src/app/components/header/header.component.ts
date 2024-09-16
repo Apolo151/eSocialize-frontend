@@ -69,7 +69,8 @@ export class HeaderComponent {
   }
 
   logOut(){
-
+    this.router.navigate([`login`]); 
+    this.authorService.logout()
   }
 
 

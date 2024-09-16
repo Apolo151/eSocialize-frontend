@@ -10,12 +10,12 @@
         
             <form action="#">
                 <div class="input-box">
-                    <input type="email" [(ngModel)] = "userNameText" name="Email" required>
+                    <input type="email" [(ngModel)] = "credentials.username" name="username" required>
                     <label>Username or Email</label>
                 </div>
         
                 <div class="input-box">
-                    <input type="password" [(ngModel)] = "userNamePassword" name="Password" (keydown.enter)="onLogin()" required>
+                    <input type="password" [(ngModel)] = "credentials.password" name="password" (keydown.enter)="onLogin()" required>
                     <label>Password</label>
                 </div>
                 

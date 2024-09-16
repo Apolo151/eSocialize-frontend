@@ -3,7 +3,7 @@ import { Author } from '../models/author';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
+import { AuthResponse } from '../models/authResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -60,20 +60,24 @@ export class AuthorsService {
     return this.http.put<Author>(url, author, this.httpOptions);
   }
 
-  authorLogIn(authorEmail: string, authorPassword: string): Observable<Author | null> {
-    return this.http.get<Author[]>(this.apiUrl, this.httpOptions).pipe(
-      map((authors: Author[]) => {
-        const specificAuthor = authors.find(author => author.userName === authorEmail);
-        if (specificAuthor && specificAuthor.password === authorPassword) {
-          return specificAuthor;
-        }
-        return null;
-      })
-    );
+  authorLogIn(credentials: any = {
+    "userName" : "",
+    "password" :""
+  }): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>('https://c856-41-199-138-62.ngrok-free.app/api/Auth/login', credentials, this.httpOptions);
   }
 
   addFriend(author: Author): Observable<Author> {
     const url = `${this.apiUrl}/${author.id}`;
     return this.http.put<Author>(url, author, this.httpOptions);
   }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('loginToken');
+  }
+
+  logout(): void {
+    localStorage.removeItem('loginToken');
+  }
+
 }
