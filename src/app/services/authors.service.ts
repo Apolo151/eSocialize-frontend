@@ -30,12 +30,8 @@ export class AuthorsService {
     return this.http.get<Author[]>(this.newApiUrl, this.httpOptions);
   }
 
-  getAllAuthor(): Observable<Author[]> {
-    return this.http.get<Author[]>(this.apiUrl, this.httpOptions);
-  }
-
   getFriends(friendIds: number[]): Observable<Author[]> {
-    return this.getAllAuthor().pipe(
+    return this.getAllAuthors().pipe(
       map((authors: Author[]) => {
         const friends = authors.filter(author => friendIds.includes(+author.id));
         return friends;
@@ -60,16 +56,16 @@ export class AuthorsService {
     return this.http.put<Author>(url, author, this.httpOptions);
   }
 
+  addFriend(author: Author): Observable<Author> {
+    const url = `${this.apiUrl}/${author.id}`;
+    return this.http.put<Author>(url, author, this.httpOptions);
+  }
+
   authorLogIn(credentials: any = {
     "userName" : "",
     "password" :""
   }): Observable<AuthResponse> {
     return this.http.post<AuthResponse>('https://c856-41-199-138-62.ngrok-free.app/api/Auth/login', credentials, this.httpOptions);
-  }
-
-  addFriend(author: Author): Observable<Author> {
-    const url = `${this.apiUrl}/${author.id}`;
-    return this.http.put<Author>(url, author, this.httpOptions);
   }
 
   isLoggedIn(): boolean {

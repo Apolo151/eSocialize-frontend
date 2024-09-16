@@ -6,6 +6,7 @@ import { icon } from '@fortawesome/fontawesome-svg-core';
 import { Author } from 'src/app/models/author';
 import { AuthorsService } from 'src/app/services/authors.service';
 import { AuthResponse } from 'src/app/models/authResponse';
+import {jwtDecode} from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -38,8 +39,13 @@ export class LoginComponent {
             alert("wrong user name or password ❌")
           }
           else if(response.success && response.accessToken){
+              const decodedToken : any = jwtDecode(response.accessToken)
+              const userId = decodedToken.nameid
+              console.clear()
+              console.log(userId)
+
             localStorage.setItem('loginToken', response.accessToken)
-            alert("loggedSucce")
+            this.router.navigate([`/home/${userId}`]);
           }else
           {
              console.log(response.message)
