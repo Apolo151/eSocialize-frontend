@@ -1,9 +1,12 @@
 import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { Post } from 'src/app/models/post';
 import { Author } from 'src/app/models/author';
+import { Like } from 'src/app/models/like';
 import { PostComment } from 'src/app/models/comment';
 import { AuthorsService } from 'src/app/services/authors.service';  // Import the service
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-post',
@@ -16,8 +19,11 @@ export class PostComponent implements OnChanges {
   @Output() postDeleted = new EventEmitter<number>();
   @Output() postUpdated = new EventEmitter<Post>();
   @Output() newComment = new EventEmitter<PostComment>();
+  @Output() addLike = new EventEmitter<Like>();
 
   faEllipsis = faEllipsis;
+  faHeart = faHeart;
+  faComment = faCommentDots;
   isDropdownOpen = false;
   isEditing = false;
   beforeEdit: string = '';
@@ -171,5 +177,26 @@ export class PostComponent implements OnChanges {
   getCommentAuthorName(authorId: number): string {
     const author = this.commentAuthors.get(authorId);
     return author?.username || 'Unknown';
+  }
+
+  likePost() {
+
+    const likedBefore = this.post.likes.find(like => +like.UserId === +this.loggedAuthor.id)
+    
+    if(!likedBefore){
+      const like : Like = {
+        id: Date.now(),
+        PostId: this.post.id,
+        UserId: this.loggedAuthor!.id,
+        createdAt: new Date(),
+      }
+  
+      this.post.likes.push(like)
+      this.postUpdated.emit(this.post)
+    }
+
+    this.post.likes = this.post.likes.filter(l => l !== likedBefore);
+    this.postUpdated.emit(this.post);
+
   }
 }

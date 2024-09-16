@@ -60,4 +60,9 @@ export class AuthorsService {
     );
   }
 
+  addFriend(author: Author): Observable<Author> {
+    const url = `${this.apiUrl}/${author.id}`;
+    return this.http.put<Author>(url, author);
+  }
+
 }

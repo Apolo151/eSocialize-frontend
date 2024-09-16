@@ -11,10 +11,9 @@
 
 .container{
     display: flex;
-    justify-content: space-between;
 }
 
 .nav-container{
     padding: 0;
-    margin-left: -300px;
+    margin-left: 2.5%;
 }

@@ -26,15 +26,19 @@
     <button class="save-button" *ngIf="isEditing" (click)="savePost()">Save</button>
     <button class="cancel-button" *ngIf="isEditing" (click)="cancelEditing()">Cancel</button>
 
-    <div class="likes-comments-container">
-      <p *ngIf="post.likes.length > 0">{{post.likes.length}} likes</p>
+    <!-- <div class="likes-comments-container">
+      <p *ngIf="post.likes.length > 0"> {{post.likes.length}} likes</p>
       <p *ngIf="post.comments.length > 0">{{post.comments.length}} comments</p>
-    </div>
+    </div> -->
   </div>
 
   <div class="comments-container">
     <div class="input-container">
-      <app-avatar [size]="'40px'" [img]="loggedAuthor.profile_picture"></app-avatar>
+      <!-- <app-avatar [size]="'40px'" [img]="loggedAuthor.profile_picture"></app-avatar> -->
+      <div class="likes-comments-container">
+        <p> <fa-icon (click)="likePost()" [icon]="faHeart"[ngStyle]="{'color': '#f81c1c' ,'font-size': '24px'}"></fa-icon>{{post.likes.length}}</p>
+        <p *ngIf="post.comments.length > 0"> <fa-icon [icon]="faComment" [ngStyle]="{'color': '#2f80ed','font-size': '24px'}"></fa-icon>{{post.comments.length}}</p>
+      </div>
       <input type="text" name="comment" id="comment" [(ngModel)]="comment" placeholder="Write your comment" (keydown.enter)="addComment()">
       <button (click)="addComment()">Submit</button>
     </div>

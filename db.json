@@ -2,12 +2,12 @@
   "Authors": [
     {
       "id": "1",
-      "username": "test",
+      "username": "Hulk",
       "password": "hashed_password_alex",
       "profile_picture": "https://i.pinimg.com/736x/d3/44/0e/d3440e1aeabc53ad0675686655a87af3.jpg",
       "isActive": true,
       "createdAt": "2024-09-10T08:00:00Z",
-      "email": "alex.jones@example.com",
+      "email": "hulk@example.com",
       "bio": "test",
       "posts": [
         4,
@@ -20,34 +20,177 @@
     },
     {
       "id": "2",
-      "username": "emily_davis",
+      "username": "Spider man",
       "password": "hashed_password_emily",
       "profile_picture": "https://i.pinimg.com/736x/3c/ac/23/3cac238d735ec8b3ac2de2f07b133da2.jpg",
       "isActive": true,
       "createdAt": "2024-09-11T08:00:00Z",
-      "email": "emily.davis@example.com",
+      "email": "spiderman@example.com",
       "bio": "Content creator and digital strategist.",
       "posts": [
         6
       ],
       "friends": [
-        1
+        1,
+        3
       ]
     },
     {
       "id": "3",
-      "username": "michael_lee",
+      "username": "Iron man",
       "password": "hashed_password_michael",
       "profile_picture": "https://i.pinimg.com/736x/9b/bd/92/9bbd9297b91dd8d8de331a4bfb6439db.jpg",
       "isActive": true,
       "createdAt": "2024-09-12T08:00:00Z",
-      "email": "michael.lee@example.com",
+      "email": "ironman@example.com",
       "bio": "Graphic designer and art lover.",
       "posts": [
         7
       ],
       "friends": [
-        1
+        1,
+        2
+      ]
+    },
+    {
+      "id": "4",
+      "username": "Bucky Barnes",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://i.pinimg.com/736x/58/b4/0e/58b40ed0390bf9af62c5a7d2ec18d9bf.jpg",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "5",
+      "username": "Clint Barton",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://44.media.tumblr.com/b72e0dd58fc1f3114e2a89bb978e7a25/tumblr_inline_oa1n28GrE71u5utwn_500.gif",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": [
+        11,
+        6,
+        10
+      ]
+    },
+    {
+      "id": "6",
+      "username": "James Rhodes",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://pm1.aminoapps.com/7142/2e94822ee53e3df38b89731e8a77d13e0210bae3r1-419-496v2_00.jpg",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": "7",
+      "username": "Vision",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://i.pinimg.com/564x/03/d3/1c/03d31c3871e65f69cdf1e4732a7fa5dd.jpg",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": []
+    },
+    {
+      "id": "8",
+      "username": "Captain America",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://toppng.com/uploads/preview/free-icons-captain-america-11553541790llhrflvlzz.png",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": [
+        9,
+        5
+      ]
+    },
+    {
+      "id": "9",
+      "username": "Sam Wilson",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://i.pinimg.com/736x/b2/ac/31/b2ac312290dcccee02bec7c3613f92d9.jpg",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": [
+        8
+      ]
+    },
+    {
+      "id": "10",
+      "username": "Natasha Romanoof",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://assets-prd.ignimgs.com/2021/03/23/black-widow-button-1616528351974.jpg",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "11",
+      "username": "Ant man",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://i.pinimg.com/736x/86/6c/2c/866c2cae2cce1055872b09f1371cd419.jpg",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": []
+    },
+    {
+      "id": "12",
+      "username": "Wanda Maximoff",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://i.pinimg.com/280x280_RS/fa/de/a0/fadea0d820002b8bcc9013e7259d5442.jpg",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": []
+    },
+    {
+      "id": "13",
+      "username": "Black Panther",
+      "password": "hashed_password_michael",
+      "profile_picture": "https://avatarfiles.alphacoders.com/123/123686.jpg",
+      "isActive": true,
+      "createdAt": "2024-09-12T08:00:00Z",
+      "email": "ironman@example.com",
+      "bio": "Graphic designer and art lover.",
+      "posts": [],
+      "friends": [
+        2,
+        12
       ]
     }
   ],
@@ -103,6 +246,13 @@
           "PostId": "5",
           "UserId": "2",
           "createdAt": "2024-09-15T11:00:00Z"
+        },
+        {
+          "id": 1726465355470,
+          "content": "hello",
+          "PostId": "5",
+          "UserId": "1",
+          "createdAt": "2024-09-16T05:42:35.470Z"
         }
       ]
     },
@@ -111,7 +261,14 @@
       "userId": 2,
       "content": "New blog post on digital marketing strategies!",
       "createdAt": "2024-09-14T14:00:00Z",
-      "likes": [],
+      "likes": [
+        {
+          "id": 1726462770183,
+          "PostId": "6",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:59:30.183Z"
+        }
+      ],
       "comments": [
         {
           "id": 1726433602688,
@@ -130,6 +287,12 @@
       "likes": [
         {
           "userId": 1
+        },
+        {
+          "id": 1726462428538,
+          "PostId": "7",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:48.538Z"
         }
       ],
       "comments": [
@@ -148,7 +311,62 @@
       "userId": "1",
       "createdAt": "2024-09-15T20:36:34.599Z",
       "comments": [],
-      "likes": []
+      "likes": [
+        {
+          "id": 1726462394570,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:14.570Z"
+        },
+        {
+          "id": 1726462395338,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:15.338Z"
+        },
+        {
+          "id": 1726462422666,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:42.666Z"
+        },
+        {
+          "id": 1726462422869,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:42.869Z"
+        },
+        {
+          "id": 1726462423039,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:43.039Z"
+        },
+        {
+          "id": 1726462423523,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:43.523Z"
+        },
+        {
+          "id": 1726462423723,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:43.723Z"
+        },
+        {
+          "id": 1726462423964,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:43.964Z"
+        },
+        {
+          "id": 1726462424068,
+          "PostId": "1726432594599",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:44.068Z"
+        }
+      ]
     },
     {
       "id": "1726434356854",
@@ -156,7 +374,20 @@
       "userId": "2",
       "createdAt": "2024-09-15T21:05:56.854Z",
       "comments": [],
-      "likes": []
+      "likes": [
+        {
+          "id": 1726462391867,
+          "PostId": "1726434356854",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:11.867Z"
+        },
+        {
+          "id": 1726462392508,
+          "PostId": "1726434356854",
+          "UserId": "3",
+          "createdAt": "2024-09-16T04:53:12.508Z"
+        }
+      ]
     },
     {
       "id": "1726446626108",
@@ -170,9 +401,23 @@
           "PostId": "1726446626108",
           "UserId": "2",
           "createdAt": "2024-09-16T01:05:46.743Z"
+        },
+        {
+          "id": 1726448931690,
+          "content": "welcome home",
+          "PostId": "1726446626108",
+          "UserId": "3",
+          "createdAt": "2024-09-16T01:08:51.690Z"
         }
       ],
-      "likes": []
+      "likes": [
+        {
+          "id": 1726465346294,
+          "PostId": "1726446626108",
+          "UserId": "1",
+          "createdAt": "2024-09-16T05:42:26.294Z"
+        }
+      ]
     }
   ]
 }

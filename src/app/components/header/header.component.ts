@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Author } from 'src/app/models/author';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { AuthorsService } from 'src/app/services/authors.service';
 import { Router } from '@angular/router';
+import { faSignOut } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +13,12 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 
   @Input() author!: Author;
+  @Output() friendAdded = new EventEmitter<Author>();
   authors :Author[] = [];
   errorMessege = '';
   isDropdownOpen = false;
   faAdd = faAdd;
-
+  faSignOut = faSignOut;
 
   imageUrl = '';
   logoUrl = 'https://media.istockphoto.com/id/1032803298/vector/concept-of-sharing-ideas-between-a-social-network.jpg?s=612x612&w=0&k=20&c=oBL1v-YS_gEtDGC2PPB1bd9ppJRtSlS88JRUBOIY9aE='
@@ -48,13 +50,24 @@ export class HeaderComponent {
   }
 
   addFriend(id : number){
-    console.log("added " + id);
+    const author = this.authors.find(author => author.id.toString() === id.toString());
+    if(this.author.friends?.toString().includes(id.toString())){
+      alert(author?.username + " is already your friend")
+    }
+    else{
+      this.author.friends?.push(Number(id))
+      this.friendAdded.emit(this.author)
+    }
   }
 
   goToUserProfile() {
     if (this.author && this.author.id) {
       this.router.navigate([`/user/${this.author.id}`]); 
     }
+  }
+
+  logOut(){
+
   }
 
 

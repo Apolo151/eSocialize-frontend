@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   posts: Post[] = [];
+  authors: Author[] = [];
   authorId: string = '';
   author: Author | undefined;
   errorMessage: string = '';
@@ -38,6 +39,17 @@ export class HomeComponent implements OnInit {
         console.error('Error fetching posts:', err);
       }
     });
+  }
+
+  loadAllAutohrs(){
+    this.authorService.getAllAuthor().subscribe(
+      (response: Author[]) => {
+        this.authors = response
+      },
+      (error) =>{
+        this.errorMessage = 'Failed to load authors';
+      }
+    )
   }
 
   loadAuthor(): void{
@@ -101,5 +113,19 @@ export class HomeComponent implements OnInit {
   goToUserProfile(userId: string) {
     this.router.navigate([`/user/${userId}`]);
   }
-  
+
+  addFriend(author: Author) {
+    // console.log(author.friends?.toString())
+    this.authorService.addFriend(author).subscribe ({
+      next: (response) => {
+        const index = this.authors.findIndex(a => a.id === response.id);
+        if(index !== -1 ){
+          this.authors[index] = response;
+          console.log("Friend added successfully");
+        }
+      }
+    })
+    
+    }
+
 }

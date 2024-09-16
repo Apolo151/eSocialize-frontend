@@ -18,9 +18,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FriendDetailsComponent } from './components/friend-details/friend-details.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JwtInterceptor } from './services/jwt.interceptor';
 import { CommentsComponent } from './components/comments/comments.component';
+import { JwtInterceptor } from './services/jwt.interceptor';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';  
+import { AuthInterceptor } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
   ],
   providers: [
     provideRouter([], withComponentInputBinding()),
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    //{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
