@@ -142,6 +142,19 @@ export class HomeComponent implements OnInit {
     this.router.navigate([`/user/${userId}`]);
   }
 
+  followFriend(id: Number){
+    this.authorService.followFriend(id).subscribe(
+      {
+        next: (res : any) => {
+          console.log(res)
+        },
+        error: (err) =>{
+          console.log(err)
+        }
+      }
+    )
+  }
+
   addFriend(author: Author) {
     // console.log(author.friends?.toString())
     this.authorService.addFriend(author).subscribe ({

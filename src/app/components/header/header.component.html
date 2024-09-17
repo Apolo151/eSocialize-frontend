@@ -15,8 +15,10 @@
         </button>
         <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
             <h4>Suggested for you</h4>
-            <app-friend-details *ngFor="let author of authors" [friend]="author">
-                <p (click)="addFriend(author.id)"> + Follow</p>
+            <app-friend-details *ngFor="let author of authors" [friend]="author" (click)="openFriendProfile(author.id)">
+                <p (click)="followFriend(author.id); $event.stopPropagation()"> 
+                    {{isFollowed(author.id) ? 'Following' : '+ Follow'}} 
+                  </p>
             </app-friend-details>
             
         </div>
@@ -24,5 +26,5 @@
 
       <fa-icon class="dropdown-icon" (click)="logOut()" [icon]="faSignOut"></fa-icon>
 
-      <a [routerLink]="['/user', author.id]"><app-avatar [img]="imageUrl || './../../assets/images/default-profile-picture-url.webp'"></app-avatar></a>
+      <a [routerLink]="['/user', loggedAuthor.id]"><app-avatar [img]="imageUrl || './../../assets/images/default-profile-picture-url.webp'"></app-avatar></a>
 </div>

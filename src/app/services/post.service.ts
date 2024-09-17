@@ -105,7 +105,7 @@ export class PostService {
         email: post.author.email,
         bio: post.author.bio,
         profilePicture: post.author.profilePicture,
-        followings: post.author.friends
+        followings: post.author.followings
       },
       comments: post.comments.map((comment: any) => ({
         id: comment.id,

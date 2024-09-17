@@ -53,6 +53,11 @@ export class AuthorsService {
     return this.http.post<any>(url, {followeeId : author.id}, this.httpOptions);
   }
 
+  followFriend(followeeId : Number) : Observable<any> {
+    const url = `${this.baseUrl}/Follows`;    
+    return this.http.post(url, {"followeeId" : followeeId}, this.httpOptions)
+  }
+
   authorLogIn(credentials: any = {
     "userName" : "",
     "password" :""

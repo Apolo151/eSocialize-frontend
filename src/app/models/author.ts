@@ -9,6 +9,5 @@ export interface Author {
     password?: string | null;      
     isActive?: boolean;
     createdAt?: Date;
-    friends?: number[];       
+    followings?: number[];       
   }
-  

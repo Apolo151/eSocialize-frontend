@@ -16,6 +16,12 @@ textarea,
 select {
     font: inherit;
 }
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
 p,
 h1,
