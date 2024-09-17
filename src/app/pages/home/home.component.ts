@@ -105,9 +105,37 @@ export class HomeComponent implements OnInit {
 
   addCommentToPost(newComment: PostComment, postId: number) {
     const post = this.posts.find(p => p.id === postId);
+    this.postService.addComment(newComment).subscribe({
+      next: (newComment) => {
+        console.log("comment added", newComment)
+      },
+      error: (err) =>{
+        console.log(err)
+      }
+    })
     if (post) {
       post.comments.push(newComment); 
     }
+  }
+  updateComment(updatedComment : PostComment){
+    console.log("hi")
+    this.postService.updateComment(updatedComment).subscribe({
+      next: (updatedComment) => {
+        console.log("comment updated", updatedComment)
+      },
+      error: (err) =>{
+        console.log(err)
+      }
+    })
+  }
+  deleteComment(commentDelete: PostComment){
+    this.postService.deleteComment(commentDelete).subscribe({
+      next: (commentDelete) => {
+        console.log("comment deleted", commentDelete)
+      },
+      error: (err) =>{
+        console.log(err)
+      }    })
   }
 
   goToUserProfile(userId: string) {

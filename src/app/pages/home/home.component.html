@@ -22,6 +22,8 @@
         (postDeleted)="handlePostDeleted($event)"
         (postUpdated)="handlePostUpdated($event)"
         (newComment)="addCommentToPost($event, post.id)"
+        (commentDelete)="deleteComment($event)"
+        (updatedComment)="updateComment($event)"
       ></app-post>
     </ng-container>
   </div>

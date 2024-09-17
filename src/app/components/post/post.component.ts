@@ -20,7 +20,8 @@ export class PostComponent implements OnChanges {
   @Output() postUpdated = new EventEmitter<Post>();
   @Output() newComment = new EventEmitter<PostComment>();
   @Output() addLike = new EventEmitter<Like>();
-
+  @Output() commentDelete = new EventEmitter<PostComment>();
+  @Output() updatedComment = new EventEmitter<PostComment>();
   faEllipsis = faEllipsis;
   faHeart = faHeart;
   faComment = faCommentDots;
@@ -112,17 +113,20 @@ export class PostComponent implements OnChanges {
   // Comment logic
   comment: string = "";
   addComment(): void {
+    console.log(this.post.comments)
     if (this.comment.trim()) {
+      let index = 0;
+      if(this.post.comments.length > 0)
+        index=  this.post.comments[this.post.comments.length - 1].id + 1
       const newComment: PostComment = {
-        id: Date.now(),
+        id: index,
         content: this.comment,
         PostId: this.post.id,
         UserId: this.loggedAuthor!.id,
         createdAt: new Date(),
       };
-
-      this.post.comments.push(newComment);
-      this.postUpdated.emit(this.post);
+      this.newComment.emit(newComment);
+      
       this.comment = '';
     }
   }
@@ -138,7 +142,9 @@ export class PostComponent implements OnChanges {
     if (index !== -1) {
       this.post.comments[index].content = comment.content;
     }
-    this.postUpdated.emit(this.post);
+    console.log(comment)
+    this.updatedComment.emit(comment);
+    console.log(this.updatedComment)
     this.editingCommentId = null;
   }
 
@@ -152,8 +158,8 @@ export class PostComponent implements OnChanges {
   }
 
   deleteComment(comment: PostComment): void {
+    this.commentDelete.emit(comment)
     this.post.comments = this.post.comments.filter(c => c.id !== comment.id);
-    this.postUpdated.emit(this.post);
     this.deletingCommentId = null;
   }
 

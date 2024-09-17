@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post';
 import { map } from 'rxjs/operators';
+import { PostComment } from '../models/comment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import { map } from 'rxjs/operators';
 export class PostService {
   //private apiUrl = 'http://localhost:5108//api/Posts'
   private apiUrl = 'https://c856-41-199-138-62.ngrok-free.app/api/Posts/';
+  private commentUrl = "https://c856-41-199-138-62.ngrok-free.app/api/Comments/"
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -51,13 +53,11 @@ export class PostService {
     );
   }
 
-  // Add a new post
   addPost(post: Post): Observable<Post> {
     const newPost = {
       title: "no",
       content: post.content,
       authorId: post.author.id,
-      comments: post.comments,
       status: 0,
       image: ""
     };
@@ -65,12 +65,40 @@ export class PostService {
     return this.http.post<Post>(this.apiUrl, newPost, this.httpOptions);
   }
 
+
+  addComment(comment: PostComment): Observable<PostComment>{
+    const newComment = {
+      postId : comment.PostId,
+      commenterId: comment.UserId,
+      content: comment.content
+    }
+    return this.http.post<PostComment>(this.commentUrl,newComment,this.httpOptions)
+  }
+
+  deleteComment(comment: PostComment) : Observable<void> {
+    const commentToBeDeleted = {
+      commentId  : comment.id
+    }
+    const url = `${this.commentUrl}${comment.id}`;
+    return this.http.delete<void>(url, this.httpOptions);
+  }
+
+  updateComment(comment: PostComment) : Observable<PostComment>{
+    const commentToBeEdited=  {
+      id : comment.id,
+      content: comment.content
+    }
+    const url = `${this.commentUrl}${comment.id}`
+    return this.http.put<PostComment>(url,commentToBeEdited,this.httpOptions)
+  }
+
   updatePost(post: Post): Observable<Post> {
     const url = `${this.apiUrl}${post.id}`;
     const updatedPost = {
+      title: "",
       content: post.content,
-      title: "null",
-      image: "null",
+      image: "",
+      createdAt: post.createdAt,
       author: {
         id: post.author.id,
         userName: post.author.userName,
@@ -83,12 +111,10 @@ export class PostService {
         id: comment.id,
         postId: comment.PostId, 
         commenterId: comment.UserId,
-        content: comment.content,
         commenterName: "",
+        content: comment.content,
         createdAt: new Date(comment.createdAt)
       })),
-      likes: [],
-      createdAt: post.createdAt,
       isFollowedAuthor: true
     };
 
