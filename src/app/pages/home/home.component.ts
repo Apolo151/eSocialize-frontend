@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadAuthor(): void{
-    this.authorService.getAuthor(this.authorId).subscribe({
+    this.authorService.getAuthor(Number(this.authorId)).subscribe({
       next: (data) => {
         this.author = data;
       },

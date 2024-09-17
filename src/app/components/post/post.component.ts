@@ -58,11 +58,16 @@ export class PostComponent implements OnChanges {
   }
 
   loadAuthor(): void {
-      this.postAuthor = this.post.author;
-      console.log(this.postAuthor.userName)
-      console.log(this.post.content)
+    this.authorsService.getAuthor(this.post.author.id).subscribe({
+      next: (author: Author) => {
+        this.postAuthor = author;
+      },
+      error: (error) => {
+        console.error('There was an error fetching the author data:', error);
+      }
+    });
+    
 }
-  
   // Fetch all authors for comments
   loadCommentAuthors(): void {
     this.authorsService.getAllAuthors().subscribe((authors: Author[]) => {
@@ -70,10 +75,6 @@ export class PostComponent implements OnChanges {
         this.commentAuthors.set(author.id, author);
       });
     });
-  }
-
-  getProfilePictureUrl(): string {
-    return this.postAuthor?.profilePicture || '../../../assets/images/default-profile-picture-url.webp';
   }
 
   toggleDropdown(): void {

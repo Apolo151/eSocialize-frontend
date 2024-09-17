@@ -10,11 +10,11 @@ import { AuthResponse } from '../models/authResponse';
 })
 export class AuthorsService {
 
-  // private apiUrl = 'https://c856-41-199-138-62.ngrok-free.app/api/Authors'
-  // private newApiUrl = 'http://localhost:5108/api/Authors'
+   //private apiUrl = 'http://localhost:5108//api/Authors'
 
-  private apiUrl = 'https://c856-41-199-138-62.ngrok-free.app/api/Authors'
-  private newApiUrl = 'https://c856-41-199-138-62.ngrok-free.app/api/Authors'
+   private baseUrl = 'https://c856-41-199-138-62.ngrok-free.app/api'
+   private apiUrl = 'https://c856-41-199-138-62.ngrok-free.app/api/Authors'
+  
 
   // add a header to all request
   private httpOptions = {
@@ -27,7 +27,7 @@ export class AuthorsService {
   constructor(private http: HttpClient) { }
 
   getAllAuthors(): Observable<Author[]> {
-    return this.http.get<Author[]>(this.newApiUrl, this.httpOptions);
+    return this.http.get<Author[]>(this.apiUrl, this.httpOptions);
   }
 
   getFriends(friendIds: number[]): Observable<Author[]> {
@@ -39,16 +39,8 @@ export class AuthorsService {
     );
   }
 
-  getAuthor(authorId: string): Observable<Author> {
-    return this.http.get<Author[]>(this.apiUrl, this.httpOptions).pipe(
-      map((authors: Author[]) => {
-        const specificAuthor = authors.find(author => +author.id === +authorId);
-        if (!specificAuthor) {
-          throw new Error(`Author with id ${authorId} not found`);
-        }
-        return specificAuthor;
-      })
-    );
+  getAuthor(authorId: number): Observable<Author> {
+    return this.http.get<Author>(`${this.apiUrl}/${authorId}`, this.httpOptions)
   }
 
   updateAuthor(author: Author): Observable<Author> {
@@ -56,16 +48,17 @@ export class AuthorsService {
     return this.http.put<Author>(url, author, this.httpOptions);
   }
 
-  addFriend(author: Author): Observable<Author> {
-    const url = `${this.apiUrl}/${author.id}`;
-    return this.http.put<Author>(url, author, this.httpOptions);
+  addFriend(author: Author): Observable<any> {
+    const url = `${this.baseUrl}/Follows`;
+    return this.http.post<any>(url, {followeeId : author.id}, this.httpOptions);
   }
 
   authorLogIn(credentials: any = {
     "userName" : "",
     "password" :""
   }): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>('https://c856-41-199-138-62.ngrok-free.app/api/Auth/login', credentials, this.httpOptions);
+    const url = `${this.baseUrl}/Auth/login`;
+    return this.http.post<AuthResponse>(url, credentials, this.httpOptions);
   }
 
   isLoggedIn(): boolean {

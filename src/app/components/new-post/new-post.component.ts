@@ -32,7 +32,6 @@ export class NewPostComponent {
         author : this.author,
         createdAt: new Date() ,
         comments:[],
-        likes: []
       };
 
       this.postAdded.emit(newPost);

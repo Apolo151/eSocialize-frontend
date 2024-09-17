@@ -33,7 +33,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   loadAuthor(): void {
-    this.authorService.getAuthor(this.authorId).subscribe({
+    this.authorService.getAuthor(Number(this.authorId)).subscribe({
       next: (data) => {
         this.author = data;
         this.loggedAuthor = data;

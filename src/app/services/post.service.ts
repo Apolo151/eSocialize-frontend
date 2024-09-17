@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PostService {
+  //private apiUrl = 'http://localhost:5108//api/Posts'
   private apiUrl = 'https://c856-41-199-138-62.ngrok-free.app/api/Posts/';
   private httpOptions = {
     headers: new HttpHeaders({
